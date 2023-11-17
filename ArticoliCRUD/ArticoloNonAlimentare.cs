@@ -37,7 +37,34 @@ namespace ArticoliCRUD
             Riciclable = ap.Riciclable;
         }
 
+        //metodo Clone
+        public ArticoloNonAlimentare Clone()
+        {
+            return (ArticoloNonAlimentare)this.MemberwiseClone();
+        }
 
+        //metodo Equals
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as ArticoloNonAlimentare);
+        }
+
+        public bool Equals(ArticoloNonAlimentare art)
+        {
+            return art != null && Codice == art.Codice && Descrizione == art.Descrizione && PrezzoUnitario == art.PrezzoUnitario && Materiale == art.Materiale && Riciclable == art.Riciclable;
+        }
+
+        //metodo GetHashCode
+        public override int GetHashCode()
+        {
+            return (Codice, Descrizione, PrezzoUnitario, Materiale, Riciclable).GetHashCode();
+        }
+
+        //metodo ToString
+        public override string ToString()
+        {
+            return Codice.ToString() + "; " + Descrizione.ToString() + "; " + PrezzoUnitario.ToString() + "; " + Materiale.ToString() + "; " + Riciclable.ToString();
+        }
 
 
     }
