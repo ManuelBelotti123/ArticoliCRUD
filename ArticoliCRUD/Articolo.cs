@@ -73,7 +73,7 @@ namespace ArticoliCRUD
         }
 
         //metodo sconta
-        public void Sconta(bool cartafd)
+        public virtual void Sconta(bool cartafd)
         {
             if (cartafd)
             {

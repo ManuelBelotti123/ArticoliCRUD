@@ -32,5 +32,34 @@ namespace ArticoliCRUD
         {
             DataScadenza = ap.DataScadenza;
         }
+
+        //metodo Clone
+        public ArticoloAlimentare Clone()
+        {
+            return (ArticoloAlimentare)this.MemberwiseClone();
+        }
+
+        //metodo Equals
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as ArticoloAlimentare);
+        }
+
+        public bool Equals(ArticoloAlimentare art)
+        {
+            return art != null && Codice == art.Codice && Descrizione == art.Descrizione && PrezzoUnitario == art.PrezzoUnitario && DataScadenza == art.DataScadenza;
+        }
+
+        //metodo GetHashCode
+        public override int GetHashCode()
+        {
+            return (Codice, Descrizione, PrezzoUnitario, DataScadenza).GetHashCode();
+        }
+
+        //metodo ToString
+        public override string ToString()
+        {
+            return Codice.ToString() + "; " + Descrizione.ToString() + "; " + PrezzoUnitario.ToString() + "; " + DataScadenza.ToString();
+        }
     }
 }
