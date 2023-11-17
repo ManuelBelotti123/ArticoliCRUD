@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArticoliCRUD
 {
-    internal class Articolo
+    internal class Articolo : IEquatable<Articolo>
     {
         //attributi
         protected int _codice;
@@ -42,7 +42,34 @@ namespace ArticoliCRUD
             PrezzoUnitario = ap.PrezzoUnitario;
         }
 
-        
+        //metodo Clone
+        public Articolo Clone()
+        {
+            return (Articolo)this.MemberwiseClone();
+        }
+
+        //metodo Equals
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as Articolo);
+        }
+
+        public bool Equals(Articolo art)
+        {
+            return art != null && Codice == art.Codice && Descrizione == art.Descrizione && PrezzoUnitario == art.PrezzoUnitario;
+        }
+
+        //metodo GetHashCode
+        public override int GetHashCode()
+        {
+            return (Codice, Descrizione, PrezzoUnitario).GetHashCode();
+        }
+
+        //metodo ToString
+        public override string ToString()
+        {
+            return Codice.ToString() + "; " + Descrizione.ToString() + "; " + PrezzoUnitario.ToString();
+        }
 
 
     }
