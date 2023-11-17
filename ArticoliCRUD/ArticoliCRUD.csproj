@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlimentareFresco.cs" />
     <Compile Include="Articolo.cs" />
     <Compile Include="ArticoloAlimentare.cs" />
     <Compile Include="ArticoloNonAlimentare.cs" />
