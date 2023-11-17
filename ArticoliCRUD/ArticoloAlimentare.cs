@@ -61,5 +61,21 @@ namespace ArticoliCRUD
         {
             return Codice.ToString() + "; " + Descrizione.ToString() + "; " + PrezzoUnitario.ToString() + "; " + DataScadenza.ToString();
         }
+
+        //metodo sconta
+        public override void Sconta(bool cartafd)
+        {
+            if (cartafd)
+            {
+                if (DataScadenza.Year == DateTime.Today.Year)
+                {
+                    PrezzoUnitario = PrezzoUnitario - (PrezzoUnitario * 20) / 100;
+                }
+                else
+                {
+                    PrezzoUnitario = PrezzoUnitario - (PrezzoUnitario * 5) / 100;
+                }
+            }
+        }
     }
 }
