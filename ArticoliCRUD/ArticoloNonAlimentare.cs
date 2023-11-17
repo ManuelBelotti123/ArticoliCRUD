@@ -66,6 +66,21 @@ namespace ArticoliCRUD
             return Codice.ToString() + "; " + Descrizione.ToString() + "; " + PrezzoUnitario.ToString() + "; " + Materiale.ToString() + "; " + Riciclable.ToString();
         }
 
-
+        //metodo sconta
+        public override double Sconta(bool cartafd)
+        {
+            if (cartafd)
+            {
+                if (Riciclable)
+                {
+                    return PrezzoUnitario - (PrezzoUnitario * 10) / 100;
+                }
+                else
+                {
+                    PrezzoUnitario = PrezzoUnitario - (PrezzoUnitario * 5) / 100;
+                }
+            }
+            return -1;
+        }
     }
 }
