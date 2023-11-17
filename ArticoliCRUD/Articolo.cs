@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,6 +72,14 @@ namespace ArticoliCRUD
             return Codice.ToString() + "; " + Descrizione.ToString() + "; " + PrezzoUnitario.ToString();
         }
 
+        //metodo sconta
+        public void Sconta(bool cartafd)
+        {
+            if (cartafd)
+            {
+                PrezzoUnitario = PrezzoUnitario - (PrezzoUnitario * 5) / 100;
+            }
+        }
 
     }
 }
