@@ -73,7 +73,7 @@ namespace ArticoliCRUD
             {
                 if (Riciclable)
                 {
-                    return PrezzoUnitario - (PrezzoUnitario * 10) / 100;
+                    return PrezzoUnitario - (PrezzoUnitario * 15) / 100;
                 }
                 else
                 {

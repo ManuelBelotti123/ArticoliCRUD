@@ -69,7 +69,7 @@ namespace ArticoliCRUD
             {
                 if (DataScadenza.Year == DateTime.Today.Year)
                 {
-                    return PrezzoUnitario - (PrezzoUnitario * 20) / 100;
+                    return PrezzoUnitario - (PrezzoUnitario * 25) / 100;
                 }
                 else
                 {
