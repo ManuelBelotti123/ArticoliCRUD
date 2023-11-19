@@ -63,20 +63,16 @@ namespace ArticoliCRUD
         }
 
         //metodo sconta
-        public override double Sconta(bool cartafd)
+        public override double Sconta()
         {
-            if (cartafd)
+            if (DataScadenza.Year == DateTime.Today.Year)
             {
-                if (DataScadenza.Year == DateTime.Today.Year)
-                {
-                    return PrezzoUnitario - (PrezzoUnitario * 25) / 100;
-                }
-                else
-                {
-                    return PrezzoUnitario - (PrezzoUnitario * 5) / 100;
-                }
+                return PrezzoUnitario - (PrezzoUnitario * 25) / 100;
             }
-            return -1;
+            else
+            {
+                return PrezzoUnitario - (PrezzoUnitario * 5) / 100;
+            }
         }
     }
 }

@@ -73,13 +73,9 @@ namespace ArticoliCRUD
         }
 
         //metodo sconta
-        public virtual double Sconta(bool cartafd)
+        public virtual double Sconta()
         {
-            if (cartafd)
-            {
-                return PrezzoUnitario - (PrezzoUnitario * 5) / 100;
-            }
-            return -1;
+            return PrezzoUnitario - (PrezzoUnitario * 5) / 100;
         }
 
     }

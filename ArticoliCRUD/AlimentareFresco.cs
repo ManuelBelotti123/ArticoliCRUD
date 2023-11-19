@@ -76,32 +76,28 @@ namespace ArticoliCRUD
         }
 
         //metodo sconta
-        public override double Sconta(bool cartafd)
+        public override double Sconta()
         {
-            if (cartafd)
+            int peragg = 0;
+            switch (NumGiorni)
             {
-                int peragg = 0;
-                switch (NumGiorni)
-                {
-                    case 1:
-                        peragg = 10;
-                        break;
-                    case 2:
-                        peragg = 8;
-                        break;
-                    case 3:
-                        peragg = 6;
-                        break;
-                    case 4:
-                        peragg = 4;
-                        break;
-                    case 5:
-                        peragg = 2;
-                        break;
-                }
-                return PrezzoUnitario - (PrezzoUnitario * 5) / 100 - (PrezzoUnitario * peragg) / 100;
+                case 1:
+                    peragg = 10;
+                    break;
+                case 2:
+                    peragg = 8;
+                    break;
+                case 3:
+                    peragg = 6;
+                    break;
+                case 4:
+                    peragg = 4;
+                    break;
+                case 5:
+                    peragg = 2;
+                    break;
             }
-            return -1;
+            return PrezzoUnitario - (PrezzoUnitario * 5) / 100 - (PrezzoUnitario * peragg) / 100;
         }
     }
 }

@@ -12,6 +12,8 @@ namespace ArticoliCRUD
 {
     public partial class Form1 : Form
     {
+        //dichiarazione array
+        Articolo[] arr = new Articolo[10000];
         public Form1()
         {
             InitializeComponent();
@@ -29,7 +31,20 @@ namespace ArticoliCRUD
 
         private void inviaAlim_Click(object sender, EventArgs e)
         {
-
+            int i = 0;
+            DialogResult rs = MessageBox.Show("Vuole completare l'operazione?", "Informazione", MessageBoxButtons.YesNo);
+            if (rs == DialogResult.Yes)
+            {
+                arr[i] = new ArticoloAlimentare(int. Parse(codiceText.Text), descrizioneText.Text, double.Parse(prunText.Text), dateTimePicker1.Value);
+                DialogResult r = MessageBox.Show("Possiede una carta fedeltà?", "Informazione", MessageBoxButtons.YesNo);
+                if (r == DialogResult.Yes)
+                {
+                    MessageBox.Show("Avviso", "Sconto fedeltà applicato correttamente.");
+                    arr[i].PrezzoUnitario = arr[i].Sconta();
+                }
+                listBox1.Items.Add(arr[i].ToString());
+                i++;
+            }
         }
     }
 }

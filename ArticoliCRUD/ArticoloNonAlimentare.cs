@@ -67,20 +67,16 @@ namespace ArticoliCRUD
         }
 
         //metodo sconta
-        public override double Sconta(bool cartafd)
+        public override double Sconta()
         {
-            if (cartafd)
+            if (Riciclable)
             {
-                if (Riciclable)
-                {
-                    return PrezzoUnitario - (PrezzoUnitario * 15) / 100;
-                }
-                else
-                {
-                    PrezzoUnitario = PrezzoUnitario - (PrezzoUnitario * 5) / 100;
-                }
+                return PrezzoUnitario - (PrezzoUnitario * 15) / 100;
             }
-            return -1;
+            else
+            {
+                return PrezzoUnitario - (PrezzoUnitario * 5) / 100;
+            }
         }
     }
 }
