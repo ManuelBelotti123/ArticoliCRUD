@@ -88,5 +88,28 @@ namespace ArticoliCRUD
                 i++;
             }
         }
+
+        private void inviaAF_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            DialogResult rs = MessageBox.Show("Vuole completare l'operazione?", "Informazione", MessageBoxButtons.YesNo);
+            if (rs == DialogResult.Yes)
+            {
+                arr[i] = new AlimentareFresco(int.Parse(codiceAF.Text), descAF.Text, double.Parse(prunAF.Text), dateTimePicker2.Value, int.Parse(numgAF.Text));
+                DialogResult r = MessageBox.Show("Possiede una carta fedeltà?", "Informazione", MessageBoxButtons.YesNo);
+                if (r == DialogResult.Yes)
+                {
+                    MessageBox.Show("Sconti fedeltà e ordinario applicato correttamente.", "Avviso");
+                    arr[i].PrezzoUnitario = arr[i].Sconta(true);
+                }
+                else
+                {
+                    MessageBox.Show("Sconto aggiuntivo ordinario applicato correttamente.", "Avviso");
+                    arr[i].PrezzoUnitario = arr[i].Sconta(false);
+                }
+                listBox1.Items.Add(arr[i].ToString());
+                i++;
+            }
+        }
     }
 }

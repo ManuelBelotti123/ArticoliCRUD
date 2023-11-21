@@ -55,16 +55,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tabAlimF = new System.Windows.Forms.TabPage();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.numgAF = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.button2 = new System.Windows.Forms.Button();
+            this.inviaAF = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.prunAF = new System.Windows.Forms.TextBox();
+            this.descAF = new System.Windows.Forms.TextBox();
+            this.codiceAF = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -331,16 +331,16 @@
             // tabAlimF
             // 
             this.tabAlimF.Controls.Add(this.label19);
-            this.tabAlimF.Controls.Add(this.textBox8);
+            this.tabAlimF.Controls.Add(this.numgAF);
             this.tabAlimF.Controls.Add(this.dateTimePicker2);
-            this.tabAlimF.Controls.Add(this.button2);
+            this.tabAlimF.Controls.Add(this.inviaAF);
             this.tabAlimF.Controls.Add(this.label9);
             this.tabAlimF.Controls.Add(this.label10);
             this.tabAlimF.Controls.Add(this.label11);
             this.tabAlimF.Controls.Add(this.label12);
-            this.tabAlimF.Controls.Add(this.textBox1);
-            this.tabAlimF.Controls.Add(this.textBox2);
-            this.tabAlimF.Controls.Add(this.textBox3);
+            this.tabAlimF.Controls.Add(this.prunAF);
+            this.tabAlimF.Controls.Add(this.descAF);
+            this.tabAlimF.Controls.Add(this.codiceAF);
             this.tabAlimF.Controls.Add(this.label4);
             this.tabAlimF.Location = new System.Drawing.Point(4, 22);
             this.tabAlimF.Name = "tabAlimF";
@@ -359,13 +359,13 @@
             this.label19.TabIndex = 21;
             this.label19.Text = "Giorni Apertura";
             // 
-            // textBox8
+            // numgAF
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(36, 301);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(204, 29);
-            this.textBox8.TabIndex = 20;
+            this.numgAF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numgAF.Location = new System.Drawing.Point(36, 301);
+            this.numgAF.Name = "numgAF";
+            this.numgAF.Size = new System.Drawing.Size(204, 29);
+            this.numgAF.TabIndex = 20;
             // 
             // dateTimePicker2
             // 
@@ -374,14 +374,15 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(204, 20);
             this.dateTimePicker2.TabIndex = 14;
             // 
-            // button2
+            // inviaAF
             // 
-            this.button2.Location = new System.Drawing.Point(255, 90);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 240);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Invia";
-            this.button2.UseVisualStyleBackColor = true;
+            this.inviaAF.Location = new System.Drawing.Point(255, 90);
+            this.inviaAF.Name = "inviaAF";
+            this.inviaAF.Size = new System.Drawing.Size(84, 240);
+            this.inviaAF.TabIndex = 19;
+            this.inviaAF.Text = "Invia";
+            this.inviaAF.UseVisualStyleBackColor = true;
+            this.inviaAF.Click += new System.EventHandler(this.inviaAF_Click);
             // 
             // label9
             // 
@@ -419,29 +420,29 @@
             this.label12.TabIndex = 15;
             this.label12.Text = "Codice Articolo";
             // 
-            // textBox1
+            // prunAF
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(36, 195);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(204, 29);
-            this.textBox1.TabIndex = 13;
+            this.prunAF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prunAF.Location = new System.Drawing.Point(36, 195);
+            this.prunAF.Name = "prunAF";
+            this.prunAF.Size = new System.Drawing.Size(204, 29);
+            this.prunAF.TabIndex = 13;
             // 
-            // textBox2
+            // descAF
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(36, 142);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(204, 29);
-            this.textBox2.TabIndex = 12;
+            this.descAF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descAF.Location = new System.Drawing.Point(36, 142);
+            this.descAF.Name = "descAF";
+            this.descAF.Size = new System.Drawing.Size(204, 29);
+            this.descAF.TabIndex = 12;
             // 
-            // textBox3
+            // codiceAF
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(36, 90);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(204, 29);
-            this.textBox3.TabIndex = 11;
+            this.codiceAF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codiceAF.Location = new System.Drawing.Point(36, 90);
+            this.codiceAF.Name = "codiceAF";
+            this.codiceAF.Size = new System.Drawing.Size(204, 29);
+            this.codiceAF.TabIndex = 11;
             // 
             // label4
             // 
@@ -546,14 +547,14 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button inviaAF;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox prunAF;
+        private System.Windows.Forms.TextBox descAF;
+        private System.Windows.Forms.TextBox codiceAF;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
@@ -567,7 +568,7 @@
         private System.Windows.Forms.TextBox descNAlim;
         private System.Windows.Forms.TextBox codiceNAlim;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox numgAF;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button inviaNAlim;
     }
