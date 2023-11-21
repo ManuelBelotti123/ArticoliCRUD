@@ -66,13 +66,13 @@ namespace ArticoliCRUD
         public override double Sconta(bool c)
         {
             double ps = PrezzoUnitario;
-            if (DataScadenza.Year == DateTime.Today.Year)
-            {
-                ps = ps - (PrezzoUnitario * 20) / 100;
-            }
             if (c)
             {
-                ps = ps - (PrezzoUnitario * 5) / 100;
+                ps = ps - (ps * 5) / 100;
+            }
+            if (DataScadenza.Year == DateTime.Today.Year)
+            {
+                ps = ps - (ps * 20) / 100;
             }
             return Math.Round(ps, 2);
         }

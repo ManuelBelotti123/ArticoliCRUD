@@ -70,13 +70,13 @@ namespace ArticoliCRUD
         public override double Sconta(bool c)
         {
             double ps = PrezzoUnitario;
-            if (Riciclable)
-            {
-                ps = ps - (PrezzoUnitario * 10) / 100;
-            }
             if (c)
             {
-                ps = ps - (PrezzoUnitario * 5) / 100;
+                ps = ps - (ps * 5) / 100;
+            }
+            if (Riciclable)
+            {
+                ps = ps - (ps * 10) / 100;
             }
             return Math.Round(ps, 2);
         }

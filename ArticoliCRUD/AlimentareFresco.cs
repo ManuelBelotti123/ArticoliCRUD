@@ -79,6 +79,10 @@ namespace ArticoliCRUD
         public override double Sconta(bool c)
         {
             double ps = PrezzoUnitario;
+            if (c)
+            {
+                ps = ps - (ps * 5) / 100;
+            }
             int peragg = 0;
             switch (NumGiorni)
             {
@@ -98,11 +102,7 @@ namespace ArticoliCRUD
                     peragg = 2;
                     break;
             }
-            ps = ps - (PrezzoUnitario * peragg) / 100;
-            if (c)
-            {
-                ps = ps - (PrezzoUnitario * 5) / 100;
-            }
+            ps = ps - (ps * peragg) / 100;
             return Math.Round(ps, 2);
         }
     }

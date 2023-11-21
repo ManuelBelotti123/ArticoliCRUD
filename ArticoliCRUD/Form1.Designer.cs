@@ -44,15 +44,14 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.materialeNAlim = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.prunNAlim = new System.Windows.Forms.TextBox();
+            this.descNAlim = new System.Windows.Forms.TextBox();
+            this.codiceNAlim = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabAlimF = new System.Windows.Forms.TabPage();
             this.label19 = new System.Windows.Forms.Label();
@@ -71,6 +70,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.inviaNAlim = new System.Windows.Forms.Button();
             this.tabs.SuspendLayout();
             this.tabAlim.SuspendLayout();
             this.tabNAlim.SuspendLayout();
@@ -198,23 +198,23 @@
             // 
             // tabNAlim
             // 
+            this.tabNAlim.Controls.Add(this.inviaNAlim);
             this.tabNAlim.Controls.Add(this.radioButton2);
             this.tabNAlim.Controls.Add(this.radioButton1);
             this.tabNAlim.Controls.Add(this.label18);
-            this.tabNAlim.Controls.Add(this.textBox7);
-            this.tabNAlim.Controls.Add(this.button3);
+            this.tabNAlim.Controls.Add(this.materialeNAlim);
             this.tabNAlim.Controls.Add(this.label14);
             this.tabNAlim.Controls.Add(this.label15);
             this.tabNAlim.Controls.Add(this.label16);
             this.tabNAlim.Controls.Add(this.label17);
-            this.tabNAlim.Controls.Add(this.textBox4);
-            this.tabNAlim.Controls.Add(this.textBox5);
-            this.tabNAlim.Controls.Add(this.textBox6);
+            this.tabNAlim.Controls.Add(this.prunNAlim);
+            this.tabNAlim.Controls.Add(this.descNAlim);
+            this.tabNAlim.Controls.Add(this.codiceNAlim);
             this.tabNAlim.Controls.Add(this.label3);
             this.tabNAlim.Location = new System.Drawing.Point(4, 22);
             this.tabNAlim.Name = "tabNAlim";
             this.tabNAlim.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNAlim.Size = new System.Drawing.Size(480, 368);
+            this.tabNAlim.Size = new System.Drawing.Size(428, 368);
             this.tabNAlim.TabIndex = 1;
             this.tabNAlim.Text = "Non Alimentari";
             this.tabNAlim.UseVisualStyleBackColor = true;
@@ -250,22 +250,13 @@
             this.label18.TabIndex = 21;
             this.label18.Text = "Riciclabile";
             // 
-            // textBox7
+            // materialeNAlim
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(39, 246);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(204, 29);
-            this.textBox7.TabIndex = 20;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(258, 90);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 238);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Invia";
-            this.button3.UseVisualStyleBackColor = true;
+            this.materialeNAlim.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialeNAlim.Location = new System.Drawing.Point(39, 246);
+            this.materialeNAlim.Name = "materialeNAlim";
+            this.materialeNAlim.Size = new System.Drawing.Size(204, 29);
+            this.materialeNAlim.TabIndex = 20;
             // 
             // label14
             // 
@@ -303,29 +294,29 @@
             this.label17.TabIndex = 15;
             this.label17.Text = "Codice Articolo";
             // 
-            // textBox4
+            // prunNAlim
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(39, 192);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(204, 29);
-            this.textBox4.TabIndex = 13;
+            this.prunNAlim.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prunNAlim.Location = new System.Drawing.Point(39, 192);
+            this.prunNAlim.Name = "prunNAlim";
+            this.prunNAlim.Size = new System.Drawing.Size(204, 29);
+            this.prunNAlim.TabIndex = 13;
             // 
-            // textBox5
+            // descNAlim
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(39, 141);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(204, 29);
-            this.textBox5.TabIndex = 12;
+            this.descNAlim.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descNAlim.Location = new System.Drawing.Point(39, 141);
+            this.descNAlim.Name = "descNAlim";
+            this.descNAlim.Size = new System.Drawing.Size(204, 29);
+            this.descNAlim.TabIndex = 12;
             // 
-            // textBox6
+            // codiceNAlim
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(39, 90);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(204, 29);
-            this.textBox6.TabIndex = 11;
+            this.codiceNAlim.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codiceNAlim.Location = new System.Drawing.Point(39, 90);
+            this.codiceNAlim.Name = "codiceNAlim";
+            this.codiceNAlim.Size = new System.Drawing.Size(204, 29);
+            this.codiceNAlim.TabIndex = 11;
             // 
             // label3
             // 
@@ -354,7 +345,7 @@
             this.tabAlimF.Location = new System.Drawing.Point(4, 22);
             this.tabAlimF.Name = "tabAlimF";
             this.tabAlimF.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAlimF.Size = new System.Drawing.Size(480, 368);
+            this.tabAlimF.Size = new System.Drawing.Size(428, 368);
             this.tabAlimF.TabIndex = 2;
             this.tabAlimF.Text = "Alimentari Freschi";
             this.tabAlimF.UseVisualStyleBackColor = true;
@@ -499,6 +490,16 @@
             this.listBox1.Size = new System.Drawing.Size(327, 355);
             this.listBox1.TabIndex = 0;
             // 
+            // inviaNAlim
+            // 
+            this.inviaNAlim.Location = new System.Drawing.Point(259, 90);
+            this.inviaNAlim.Name = "inviaNAlim";
+            this.inviaNAlim.Size = new System.Drawing.Size(84, 217);
+            this.inviaNAlim.TabIndex = 11;
+            this.inviaNAlim.Text = "Invia";
+            this.inviaNAlim.UseVisualStyleBackColor = true;
+            this.inviaNAlim.Click += new System.EventHandler(this.inviaNAlim_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -557,18 +558,18 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox materialeNAlim;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox prunNAlim;
+        private System.Windows.Forms.TextBox descNAlim;
+        private System.Windows.Forms.TextBox codiceNAlim;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button inviaNAlim;
     }
 }
 

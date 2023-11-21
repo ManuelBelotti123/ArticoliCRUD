@@ -44,7 +44,44 @@ namespace ArticoliCRUD
                 }
                 else
                 {
-                    MessageBox.Show("Sconto aggiuntivo ordinario applicato correttamente.", "Avviso");
+                    if (dateTimePicker1.Value.Year == DateTime.Today.Year)
+                    {
+                        MessageBox.Show("Sconto aggiuntivo ordinario applicato correttamente.", "Avviso");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nessuno sconto applicato.", "Avviso");
+                    }
+                    arr[i].PrezzoUnitario = arr[i].Sconta(false);
+                }
+                listBox1.Items.Add(arr[i].ToString());
+                i++;
+            }
+        }
+
+        private void inviaNAlim_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            DialogResult rs = MessageBox.Show("Vuole completare l'operazione?", "Informazione", MessageBoxButtons.YesNo);
+            if (rs == DialogResult.Yes)
+            {
+                arr[i] = new ArticoloNonAlimentare(int.Parse(codiceNAlim.Text), descNAlim.Text, double.Parse(prunNAlim.Text), materialeNAlim.Text, radioButton1.Checked);
+                DialogResult r = MessageBox.Show("Possiede una carta fedeltà?", "Informazione", MessageBoxButtons.YesNo);
+                if (r == DialogResult.Yes)
+                {
+                    MessageBox.Show("Sconti fedeltà e ordinario applicato correttamente.", "Avviso");
+                    arr[i].PrezzoUnitario = arr[i].Sconta(true);
+                }
+                else
+                {
+                    if (radioButton1.Checked)
+                    {
+                        MessageBox.Show("Sconto aggiuntivo ordinario applicato correttamente.", "Avviso");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nessuno sconto applicato.", "Avviso");
+                    }
                     arr[i].PrezzoUnitario = arr[i].Sconta(false);
                 }
                 listBox1.Items.Add(arr[i].ToString());
