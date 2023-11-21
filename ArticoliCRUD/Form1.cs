@@ -136,9 +136,59 @@ namespace ArticoliCRUD
             }
         }
 
-        private void codiceText_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void cancella_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i].Codice == int.Parse(cancellab.Text))
+                {
+                    while(arr[i + 1] == null) arr[i] = arr[i + 1];
+                }
+            }
+        }
 
+        //funzione visualizzazione array su listview
+        public void Visualizza()
+        {
+            ListViewItem Item = new ListViewItem();
+            int i = 0;
+            while (arr[i] != null)
+            {
+                if (arr[i] is ArticoloAlimentare)
+                {
+                    Item.Text = arr[i].Codice.ToString();
+                    Item.SubItems.Add(arr[i].Descrizione);
+                    Item.SubItems.Add("€" + arr[i].PrezzoUnitario.ToString());
+                    Item.SubItems.Add(((ArticoloAlimentare)arr[i]).DataScadenza.ToShortDateString());
+                    Item.SubItems.Add("--");
+                    Item.SubItems.Add("--");
+                    Item.SubItems.Add("--");
+                    listView1.Items.Add(Item);
+                }
+                else if (arr[i] is ArticoloNonAlimentare)
+                {
+                    Item.Text = arr[i].Codice.ToString();
+                    Item.SubItems.Add(arr[i].Descrizione);
+                    Item.SubItems.Add("€" + arr[i].PrezzoUnitario.ToString());
+                    Item.SubItems.Add("--");
+                    Item.SubItems.Add(((ArticoloNonAlimentare)arr[i]).Materiale.ToString());
+                    Item.SubItems.Add(((ArticoloNonAlimentare)arr[i]).Riciclable.ToString());
+                    Item.SubItems.Add("--");
+                    listView1.Items.Add(Item);
+                }
+                else if (arr[i] is AlimentareFresco)
+                {
+                    Item.Text = arr[i].Codice.ToString();
+                    Item.SubItems.Add(arr[i].Descrizione);
+                    Item.SubItems.Add("€" + arr[i].PrezzoUnitario.ToString());
+                    Item.SubItems.Add(((AlimentareFresco)arr[i]).DataScadenza.ToString());
+                    Item.SubItems.Add("--");
+                    Item.SubItems.Add("--");
+                    Item.SubItems.Add(((AlimentareFresco)arr[i]).NumGiorni.ToString());
+                    listView1.Items.Add(Item);
+                }
+                i++;
+            }
         }
     }
 }

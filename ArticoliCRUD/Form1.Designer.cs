@@ -78,11 +78,26 @@
             this.materiale = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.riciclabile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.numg = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.opzioni = new System.Windows.Forms.TabPage();
+            this.label20 = new System.Windows.Forms.Label();
+            this.cancella = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.cancellab = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.colonnab = new System.Windows.Forms.MaskedTextBox();
+            this.damodb = new System.Windows.Forms.TextBox();
+            this.modb = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.modifica = new System.Windows.Forms.Button();
             this.tabs.SuspendLayout();
             this.tabAlim.SuspendLayout();
             this.tabNAlim.SuspendLayout();
             this.tabAlimF.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.opzioni.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabs
@@ -90,6 +105,7 @@
             this.tabs.Controls.Add(this.tabAlim);
             this.tabs.Controls.Add(this.tabNAlim);
             this.tabs.Controls.Add(this.tabAlimF);
+            this.tabs.Controls.Add(this.opzioni);
             this.tabs.Location = new System.Drawing.Point(2, 53);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
@@ -550,6 +566,141 @@
             // 
             this.numg.Text = "Giorni Apertura";
             // 
+            // opzioni
+            // 
+            this.opzioni.Controls.Add(this.colonnab);
+            this.opzioni.Controls.Add(this.label25);
+            this.opzioni.Controls.Add(this.label24);
+            this.opzioni.Controls.Add(this.label23);
+            this.opzioni.Controls.Add(this.label22);
+            this.opzioni.Controls.Add(this.cancellab);
+            this.opzioni.Controls.Add(this.modb);
+            this.opzioni.Controls.Add(this.damodb);
+            this.opzioni.Controls.Add(this.button2);
+            this.opzioni.Controls.Add(this.button1);
+            this.opzioni.Controls.Add(this.cancella);
+            this.opzioni.Controls.Add(this.modifica);
+            this.opzioni.Controls.Add(this.label20);
+            this.opzioni.Location = new System.Drawing.Point(4, 22);
+            this.opzioni.Name = "opzioni";
+            this.opzioni.Padding = new System.Windows.Forms.Padding(3);
+            this.opzioni.Size = new System.Drawing.Size(428, 368);
+            this.opzioni.TabIndex = 3;
+            this.opzioni.Text = "Opzioni Aggiuntive";
+            this.opzioni.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Myanmar Text", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(6, 9);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(119, 48);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "Opzioni";
+            // 
+            // cancella
+            // 
+            this.cancella.Location = new System.Drawing.Point(27, 203);
+            this.cancella.Name = "cancella";
+            this.cancella.Size = new System.Drawing.Size(151, 33);
+            this.cancella.TabIndex = 4;
+            this.cancella.Text = "Cancella";
+            this.cancella.UseVisualStyleBackColor = true;
+            this.cancella.Click += new System.EventHandler(this.cancella_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(27, 270);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(151, 33);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Carica File Scontrino";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(27, 309);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(151, 33);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Scarica File Scontrino";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // cancellab
+            // 
+            this.cancellab.Location = new System.Drawing.Point(200, 216);
+            this.cancellab.Name = "cancellab";
+            this.cancellab.Size = new System.Drawing.Size(114, 20);
+            this.cancellab.TabIndex = 10;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(197, 200);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(107, 13);
+            this.label24.TabIndex = 14;
+            this.label24.Text = "Codice da cancellare";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(197, 66);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(40, 13);
+            this.label25.TabIndex = 18;
+            this.label25.Text = "Codice";
+            // 
+            // colonnab
+            // 
+            this.colonnab.Location = new System.Drawing.Point(200, 82);
+            this.colonnab.Mask = "0";
+            this.colonnab.Name = "colonnab";
+            this.colonnab.Size = new System.Drawing.Size(114, 20);
+            this.colonnab.TabIndex = 19;
+            // 
+            // damodb
+            // 
+            this.damodb.Location = new System.Drawing.Point(200, 121);
+            this.damodb.Name = "damodb";
+            this.damodb.Size = new System.Drawing.Size(114, 20);
+            this.damodb.TabIndex = 8;
+            // 
+            // modb
+            // 
+            this.modb.Location = new System.Drawing.Point(200, 160);
+            this.modb.Name = "modb";
+            this.modb.Size = new System.Drawing.Size(114, 20);
+            this.modb.TabIndex = 9;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(197, 105);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(73, 13);
+            this.label22.TabIndex = 12;
+            this.label22.Text = "Da Modificare";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(197, 144);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(47, 13);
+            this.label23.TabIndex = 13;
+            this.label23.Text = "Modifica";
+            // 
+            // modifica
+            // 
+            this.modifica.Location = new System.Drawing.Point(27, 69);
+            this.modifica.Name = "modifica";
+            this.modifica.Size = new System.Drawing.Size(151, 33);
+            this.modifica.TabIndex = 3;
+            this.modifica.Text = "Modifica";
+            this.modifica.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -570,6 +721,8 @@
             this.tabAlimF.ResumeLayout(false);
             this.tabAlimF.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.opzioni.ResumeLayout(false);
+            this.opzioni.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -627,6 +780,20 @@
         private System.Windows.Forms.ColumnHeader materiale;
         private System.Windows.Forms.ColumnHeader riciclabile;
         private System.Windows.Forms.ColumnHeader numg;
+        private System.Windows.Forms.TabPage opzioni;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox cancellab;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cancella;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.MaskedTextBox colonnab;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox modb;
+        private System.Windows.Forms.TextBox damodb;
+        private System.Windows.Forms.Button modifica;
     }
 }
 
