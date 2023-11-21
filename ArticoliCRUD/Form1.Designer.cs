@@ -30,6 +30,8 @@
         {
             this.tabs = new System.Windows.Forms.TabControl();
             this.tabAlim = new System.Windows.Forms.TabPage();
+            this.prezzounitText = new System.Windows.Forms.MaskedTextBox();
+            this.codiceText = new System.Windows.Forms.MaskedTextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.inviaAlim = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -39,6 +41,9 @@
             this.descrizioneText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabNAlim = new System.Windows.Forms.TabPage();
+            this.prezzounitNAlim = new System.Windows.Forms.MaskedTextBox();
+            this.codiceNAlim = new System.Windows.Forms.MaskedTextBox();
+            this.inviaNAlim = new System.Windows.Forms.Button();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label18 = new System.Windows.Forms.Label();
@@ -50,6 +55,9 @@
             this.descNAlim = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabAlimF = new System.Windows.Forms.TabPage();
+            this.numgAF = new System.Windows.Forms.MaskedTextBox();
+            this.codiceAF = new System.Windows.Forms.MaskedTextBox();
+            this.prezzounitAF = new System.Windows.Forms.MaskedTextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.inviaAF = new System.Windows.Forms.Button();
@@ -61,14 +69,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.inviaNAlim = new System.Windows.Forms.Button();
-            this.codiceText = new System.Windows.Forms.MaskedTextBox();
-            this.prunText = new System.Windows.Forms.MaskedTextBox();
-            this.codiceNAlim = new System.Windows.Forms.MaskedTextBox();
-            this.prunNAlim = new System.Windows.Forms.MaskedTextBox();
-            this.prunAF = new System.Windows.Forms.MaskedTextBox();
-            this.codiceAF = new System.Windows.Forms.MaskedTextBox();
-            this.numgAF = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.listView1 = new System.Windows.Forms.ListView();
             this.codice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -98,7 +98,7 @@
             // 
             // tabAlim
             // 
-            this.tabAlim.Controls.Add(this.prunText);
+            this.tabAlim.Controls.Add(this.prezzounitText);
             this.tabAlim.Controls.Add(this.codiceText);
             this.tabAlim.Controls.Add(this.dateTimePicker1);
             this.tabAlim.Controls.Add(this.inviaAlim);
@@ -115,6 +115,23 @@
             this.tabAlim.TabIndex = 0;
             this.tabAlim.Text = "Alimentari";
             this.tabAlim.UseVisualStyleBackColor = true;
+            // 
+            // prezzounitText
+            // 
+            this.prezzounitText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prezzounitText.Location = new System.Drawing.Point(36, 213);
+            this.prezzounitText.Name = "prezzounitText";
+            this.prezzounitText.Size = new System.Drawing.Size(204, 31);
+            this.prezzounitText.TabIndex = 13;
+            // 
+            // codiceText
+            // 
+            this.codiceText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codiceText.Location = new System.Drawing.Point(36, 90);
+            this.codiceText.Mask = "0000000000000000";
+            this.codiceText.Name = "codiceText";
+            this.codiceText.Size = new System.Drawing.Size(204, 31);
+            this.codiceText.TabIndex = 12;
             // 
             // dateTimePicker1
             // 
@@ -189,7 +206,7 @@
             // 
             // tabNAlim
             // 
-            this.tabNAlim.Controls.Add(this.prunNAlim);
+            this.tabNAlim.Controls.Add(this.prezzounitNAlim);
             this.tabNAlim.Controls.Add(this.codiceNAlim);
             this.tabNAlim.Controls.Add(this.inviaNAlim);
             this.tabNAlim.Controls.Add(this.radioButton2);
@@ -209,6 +226,33 @@
             this.tabNAlim.TabIndex = 1;
             this.tabNAlim.Text = "Non Alimentari";
             this.tabNAlim.UseVisualStyleBackColor = true;
+            // 
+            // prezzounitNAlim
+            // 
+            this.prezzounitNAlim.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prezzounitNAlim.Location = new System.Drawing.Point(39, 192);
+            this.prezzounitNAlim.Name = "prezzounitNAlim";
+            this.prezzounitNAlim.Size = new System.Drawing.Size(204, 31);
+            this.prezzounitNAlim.TabIndex = 25;
+            // 
+            // codiceNAlim
+            // 
+            this.codiceNAlim.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codiceNAlim.Location = new System.Drawing.Point(39, 91);
+            this.codiceNAlim.Mask = "0000000000000000";
+            this.codiceNAlim.Name = "codiceNAlim";
+            this.codiceNAlim.Size = new System.Drawing.Size(204, 31);
+            this.codiceNAlim.TabIndex = 24;
+            // 
+            // inviaNAlim
+            // 
+            this.inviaNAlim.Location = new System.Drawing.Point(259, 90);
+            this.inviaNAlim.Name = "inviaNAlim";
+            this.inviaNAlim.Size = new System.Drawing.Size(84, 217);
+            this.inviaNAlim.TabIndex = 11;
+            this.inviaNAlim.Text = "Invia";
+            this.inviaNAlim.UseVisualStyleBackColor = true;
+            this.inviaNAlim.Click += new System.EventHandler(this.inviaNAlim_Click);
             // 
             // radioButton2
             // 
@@ -307,7 +351,7 @@
             // 
             this.tabAlimF.Controls.Add(this.numgAF);
             this.tabAlimF.Controls.Add(this.codiceAF);
-            this.tabAlimF.Controls.Add(this.prunAF);
+            this.tabAlimF.Controls.Add(this.prezzounitAF);
             this.tabAlimF.Controls.Add(this.label19);
             this.tabAlimF.Controls.Add(this.dateTimePicker2);
             this.tabAlimF.Controls.Add(this.inviaAF);
@@ -324,6 +368,32 @@
             this.tabAlimF.TabIndex = 2;
             this.tabAlimF.Text = "Alimentari Freschi";
             this.tabAlimF.UseVisualStyleBackColor = true;
+            // 
+            // numgAF
+            // 
+            this.numgAF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numgAF.Location = new System.Drawing.Point(36, 301);
+            this.numgAF.Mask = "0";
+            this.numgAF.Name = "numgAF";
+            this.numgAF.Size = new System.Drawing.Size(204, 31);
+            this.numgAF.TabIndex = 26;
+            // 
+            // codiceAF
+            // 
+            this.codiceAF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codiceAF.Location = new System.Drawing.Point(36, 90);
+            this.codiceAF.Mask = "0000000000000000";
+            this.codiceAF.Name = "codiceAF";
+            this.codiceAF.Size = new System.Drawing.Size(204, 31);
+            this.codiceAF.TabIndex = 25;
+            // 
+            // prezzounitAF
+            // 
+            this.prezzounitAF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prezzounitAF.Location = new System.Drawing.Point(36, 195);
+            this.prezzounitAF.Name = "prezzounitAF";
+            this.prezzounitAF.Size = new System.Drawing.Size(204, 31);
+            this.prezzounitAF.TabIndex = 22;
             // 
             // label19
             // 
@@ -424,79 +494,6 @@
             this.label13.Size = new System.Drawing.Size(65, 28);
             this.label13.TabIndex = 3;
             this.label13.Text = "Cassa";
-            // 
-            // inviaNAlim
-            // 
-            this.inviaNAlim.Location = new System.Drawing.Point(259, 90);
-            this.inviaNAlim.Name = "inviaNAlim";
-            this.inviaNAlim.Size = new System.Drawing.Size(84, 217);
-            this.inviaNAlim.TabIndex = 11;
-            this.inviaNAlim.Text = "Invia";
-            this.inviaNAlim.UseVisualStyleBackColor = true;
-            this.inviaNAlim.Click += new System.EventHandler(this.inviaNAlim_Click);
-            // 
-            // codiceText
-            // 
-            this.codiceText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codiceText.Location = new System.Drawing.Point(36, 90);
-            this.codiceText.Mask = "0000000000000000";
-            this.codiceText.Name = "codiceText";
-            this.codiceText.Size = new System.Drawing.Size(204, 31);
-            this.codiceText.TabIndex = 12;
-            // 
-            // prunText
-            // 
-            this.prunText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prunText.Location = new System.Drawing.Point(36, 213);
-            this.prunText.Mask = "00,00";
-            this.prunText.Name = "prunText";
-            this.prunText.Size = new System.Drawing.Size(204, 31);
-            this.prunText.TabIndex = 13;
-            // 
-            // codiceNAlim
-            // 
-            this.codiceNAlim.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codiceNAlim.Location = new System.Drawing.Point(39, 91);
-            this.codiceNAlim.Mask = "0000000000000000";
-            this.codiceNAlim.Name = "codiceNAlim";
-            this.codiceNAlim.Size = new System.Drawing.Size(204, 31);
-            this.codiceNAlim.TabIndex = 24;
-            // 
-            // prunNAlim
-            // 
-            this.prunNAlim.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prunNAlim.Location = new System.Drawing.Point(39, 192);
-            this.prunNAlim.Mask = "00,00";
-            this.prunNAlim.Name = "prunNAlim";
-            this.prunNAlim.Size = new System.Drawing.Size(204, 31);
-            this.prunNAlim.TabIndex = 25;
-            // 
-            // prunAF
-            // 
-            this.prunAF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prunAF.Location = new System.Drawing.Point(36, 195);
-            this.prunAF.Mask = "00,00";
-            this.prunAF.Name = "prunAF";
-            this.prunAF.Size = new System.Drawing.Size(204, 31);
-            this.prunAF.TabIndex = 22;
-            // 
-            // codiceAF
-            // 
-            this.codiceAF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codiceAF.Location = new System.Drawing.Point(36, 90);
-            this.codiceAF.Mask = "0000000000000000";
-            this.codiceAF.Name = "codiceAF";
-            this.codiceAF.Size = new System.Drawing.Size(204, 31);
-            this.codiceAF.TabIndex = 25;
-            // 
-            // numgAF
-            // 
-            this.numgAF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numgAF.Location = new System.Drawing.Point(36, 301);
-            this.numgAF.Mask = "0";
-            this.numgAF.Name = "numgAF";
-            this.numgAF.Size = new System.Drawing.Size(204, 31);
-            this.numgAF.TabIndex = 26;
             // 
             // panel1
             // 
@@ -615,11 +612,11 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button inviaNAlim;
         private System.Windows.Forms.MaskedTextBox codiceText;
-        private System.Windows.Forms.MaskedTextBox prunText;
-        private System.Windows.Forms.MaskedTextBox prunNAlim;
+        private System.Windows.Forms.MaskedTextBox prezzounitText;
+        private System.Windows.Forms.MaskedTextBox prezzounitNAlim;
         private System.Windows.Forms.MaskedTextBox codiceNAlim;
         private System.Windows.Forms.MaskedTextBox codiceAF;
-        private System.Windows.Forms.MaskedTextBox prunAF;
+        private System.Windows.Forms.MaskedTextBox prezzounitAF;
         private System.Windows.Forms.MaskedTextBox numgAF;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListView listView1;

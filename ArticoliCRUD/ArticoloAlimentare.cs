@@ -13,7 +13,7 @@ namespace ArticoliCRUD
         private DateTime _datascadenza;
 
         //properties
-        public DateTime DataScadenza { get { return _datascadenza.Date; } set { _datascadenza = value; } }
+        public DateTime DataScadenza { get { return _datascadenza; } set { _datascadenza = value; } }
         
         //costruttore senza parametri
         public ArticoloAlimentare() : base()

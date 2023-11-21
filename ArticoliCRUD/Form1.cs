@@ -35,7 +35,7 @@ namespace ArticoliCRUD
             DialogResult rs = MessageBox.Show("Vuole completare l'operazione?", "Informazione", MessageBoxButtons.YesNo);
             if (rs == DialogResult.Yes)
             {
-                arr[i] = new ArticoloAlimentare(int.Parse(codiceText.Text), descrizioneText.Text, double.Parse(prunText.Text), dateTimePicker1.Value.Date);
+                arr[i] = new ArticoloAlimentare(int.Parse(codiceText.Text), descrizioneText.Text, double.Parse(prezzounitText.Text), dateTimePicker1.Value);
                 DialogResult r = MessageBox.Show("Possiede una carta fedeltà?", "Informazione", MessageBoxButtons.YesNo);
                 if (r == DialogResult.Yes)
                 {
@@ -57,8 +57,8 @@ namespace ArticoliCRUD
                 ListViewItem Item = new ListViewItem();
                 Item.Text = arr[i].Codice.ToString();
                 Item.SubItems.Add(arr[i].Descrizione);
-                Item.SubItems.Add(arr[i].PrezzoUnitario.ToString());
-                Item.SubItems.Add(((ArticoloAlimentare)arr[i]).DataScadenza.ToString());
+                Item.SubItems.Add("€" + arr[i].PrezzoUnitario.ToString());
+                Item.SubItems.Add(((ArticoloAlimentare)arr[i]).DataScadenza.ToShortDateString());
                 Item.SubItems.Add("--");
                 Item.SubItems.Add("--");
                 Item.SubItems.Add("--");
@@ -73,7 +73,7 @@ namespace ArticoliCRUD
             DialogResult rs = MessageBox.Show("Vuole completare l'operazione?", "Informazione", MessageBoxButtons.YesNo);
             if (rs == DialogResult.Yes)
             {
-                arr[i] = new ArticoloNonAlimentare(int.Parse(codiceNAlim.Text), descNAlim.Text, double.Parse(prunNAlim.Text), materialeNAlim.Text, radioButton1.Checked);
+                arr[i] = new ArticoloNonAlimentare(int.Parse(codiceNAlim.Text), descNAlim.Text, double.Parse(prezzounitNAlim.Text), materialeNAlim.Text, radioButton1.Checked);
                 DialogResult r = MessageBox.Show("Possiede una carta fedeltà?", "Informazione", MessageBoxButtons.YesNo);
                 if (r == DialogResult.Yes)
                 {
@@ -95,7 +95,7 @@ namespace ArticoliCRUD
                 ListViewItem Item = new ListViewItem();
                 Item.Text = arr[i].Codice.ToString();
                 Item.SubItems.Add(arr[i].Descrizione);
-                Item.SubItems.Add(arr[i].PrezzoUnitario.ToString());
+                Item.SubItems.Add("€" + arr[i].PrezzoUnitario.ToString());
                 Item.SubItems.Add("--");
                 Item.SubItems.Add(((ArticoloNonAlimentare)arr[i]).Materiale.ToString());
                 Item.SubItems.Add(((ArticoloNonAlimentare)arr[i]).Riciclable.ToString());
@@ -111,7 +111,7 @@ namespace ArticoliCRUD
             DialogResult rs = MessageBox.Show("Vuole completare l'operazione?", "Informazione", MessageBoxButtons.YesNo);
             if (rs == DialogResult.Yes)
             {
-                arr[i] = new AlimentareFresco(int.Parse(codiceAF.Text), descAF.Text, double.Parse(prunAF.Text), dateTimePicker2.Value.Date, int.Parse(numgAF.Text));
+                arr[i] = new AlimentareFresco(int.Parse(codiceAF.Text), descAF.Text, double.Parse(prezzounitAF.Text), dateTimePicker2.Value.Date, int.Parse(numgAF.Text));
                 DialogResult r = MessageBox.Show("Possiede una carta fedeltà?", "Informazione", MessageBoxButtons.YesNo);
                 if (r == DialogResult.Yes)
                 {
@@ -126,7 +126,7 @@ namespace ArticoliCRUD
                 ListViewItem Item = new ListViewItem();
                 Item.Text = arr[i].Codice.ToString();
                 Item.SubItems.Add(arr[i].Descrizione);
-                Item.SubItems.Add(arr[i].PrezzoUnitario.ToString());
+                Item.SubItems.Add("€" + arr[i].PrezzoUnitario.ToString());
                 Item.SubItems.Add(((AlimentareFresco)arr[i]).DataScadenza.ToString());
                 Item.SubItems.Add("--");
                 Item.SubItems.Add("--");
