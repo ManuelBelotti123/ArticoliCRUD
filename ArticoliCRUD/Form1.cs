@@ -35,7 +35,7 @@ namespace ArticoliCRUD
             DialogResult rs = MessageBox.Show("Vuole completare l'operazione?", "Informazione", MessageBoxButtons.YesNo);
             if (rs == DialogResult.Yes)
             {
-                arr[i] = new ArticoloAlimentare(int.Parse(codiceText.Text), descrizioneText.Text, double.Parse(prunText.Text), dateTimePicker1.Value);
+                arr[i] = new ArticoloAlimentare(int.Parse(codiceText.Text), descrizioneText.Text, double.Parse(prunText.Text), dateTimePicker1.Value.Date);
                 DialogResult r = MessageBox.Show("Possiede una carta fedeltà?", "Informazione", MessageBoxButtons.YesNo);
                 if (r == DialogResult.Yes)
                 {
@@ -54,7 +54,15 @@ namespace ArticoliCRUD
                     }
                     arr[i].PrezzoUnitario = arr[i].Sconta(false);
                 }
-                listBox1.Items.Add(arr[i].ToString());
+                ListViewItem Item = new ListViewItem();
+                Item.Text = arr[i].Codice.ToString();
+                Item.SubItems.Add(arr[i].Descrizione);
+                Item.SubItems.Add(arr[i].PrezzoUnitario.ToString());
+                Item.SubItems.Add(((ArticoloAlimentare)arr[i]).DataScadenza.ToString());
+                Item.SubItems.Add("--");
+                Item.SubItems.Add("--");
+                Item.SubItems.Add("--");
+                listView1.Items.Add(Item);
                 i++;
             }
         }
@@ -84,7 +92,15 @@ namespace ArticoliCRUD
                     }
                     arr[i].PrezzoUnitario = arr[i].Sconta(false);
                 }
-                listBox1.Items.Add(arr[i].ToString());
+                ListViewItem Item = new ListViewItem();
+                Item.Text = arr[i].Codice.ToString();
+                Item.SubItems.Add(arr[i].Descrizione);
+                Item.SubItems.Add(arr[i].PrezzoUnitario.ToString());
+                Item.SubItems.Add("--");
+                Item.SubItems.Add(((ArticoloNonAlimentare)arr[i]).Materiale.ToString());
+                Item.SubItems.Add(((ArticoloNonAlimentare)arr[i]).Riciclable.ToString());
+                Item.SubItems.Add("--");
+                listView1.Items.Add(Item);
                 i++;
             }
         }
@@ -95,7 +111,7 @@ namespace ArticoliCRUD
             DialogResult rs = MessageBox.Show("Vuole completare l'operazione?", "Informazione", MessageBoxButtons.YesNo);
             if (rs == DialogResult.Yes)
             {
-                arr[i] = new AlimentareFresco(int.Parse(codiceAF.Text), descAF.Text, double.Parse(prunAF.Text), dateTimePicker2.Value, int.Parse(numgAF.Text));
+                arr[i] = new AlimentareFresco(int.Parse(codiceAF.Text), descAF.Text, double.Parse(prunAF.Text), dateTimePicker2.Value.Date, int.Parse(numgAF.Text));
                 DialogResult r = MessageBox.Show("Possiede una carta fedeltà?", "Informazione", MessageBoxButtons.YesNo);
                 if (r == DialogResult.Yes)
                 {
@@ -107,7 +123,15 @@ namespace ArticoliCRUD
                     MessageBox.Show("Sconto aggiuntivo ordinario applicato correttamente.", "Avviso");
                     arr[i].PrezzoUnitario = arr[i].Sconta(false);
                 }
-                listBox1.Items.Add(arr[i].ToString());
+                ListViewItem Item = new ListViewItem();
+                Item.Text = arr[i].Codice.ToString();
+                Item.SubItems.Add(arr[i].Descrizione);
+                Item.SubItems.Add(arr[i].PrezzoUnitario.ToString());
+                Item.SubItems.Add(((AlimentareFresco)arr[i]).DataScadenza.ToString());
+                Item.SubItems.Add("--");
+                Item.SubItems.Add("--");
+                Item.SubItems.Add(((AlimentareFresco)arr[i]).NumGiorni.ToString());
+                listView1.Items.Add(Item);
                 i++;
             }
         }

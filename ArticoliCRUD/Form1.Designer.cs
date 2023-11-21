@@ -61,8 +61,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.inviaNAlim = new System.Windows.Forms.Button();
             this.codiceText = new System.Windows.Forms.MaskedTextBox();
             this.prunText = new System.Windows.Forms.MaskedTextBox();
@@ -71,6 +69,15 @@
             this.prunAF = new System.Windows.Forms.MaskedTextBox();
             this.codiceAF = new System.Windows.Forms.MaskedTextBox();
             this.numgAF = new System.Windows.Forms.MaskedTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.codice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.descrizione = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.prezzounit = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.datascadenza = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.materiale = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.riciclabile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.numg = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabs.SuspendLayout();
             this.tabAlim.SuspendLayout();
             this.tabNAlim.SuspendLayout();
@@ -418,23 +425,6 @@
             this.label13.TabIndex = 3;
             this.label13.Text = "Cassa";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Controls.Add(this.listBox1);
-            this.panel1.Location = new System.Drawing.Point(444, 75);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(344, 368);
-            this.panel1.TabIndex = 4;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(8, 6);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(327, 355);
-            this.listBox1.TabIndex = 0;
-            // 
             // inviaNAlim
             // 
             this.inviaNAlim.Location = new System.Drawing.Point(259, 90);
@@ -508,6 +498,61 @@
             this.numgAF.Size = new System.Drawing.Size(204, 31);
             this.numgAF.TabIndex = 26;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.listView1);
+            this.panel1.Location = new System.Drawing.Point(444, 75);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(344, 368);
+            this.panel1.TabIndex = 4;
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.codice,
+            this.descrizione,
+            this.prezzounit,
+            this.datascadenza,
+            this.materiale,
+            this.riciclabile,
+            this.numg});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(9, 9);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(326, 350);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // codice
+            // 
+            this.codice.Text = "Codice";
+            // 
+            // descrizione
+            // 
+            this.descrizione.Text = "Descrizione";
+            // 
+            // prezzounit
+            // 
+            this.prezzounit.Text = "Prezzo Unitario";
+            // 
+            // datascadenza
+            // 
+            this.datascadenza.Text = "Scadenza";
+            // 
+            // materiale
+            // 
+            this.materiale.Text = "Materiale";
+            // 
+            // riciclabile
+            // 
+            this.riciclabile.Text = "Riciclabile";
+            // 
+            // numg
+            // 
+            this.numg.Text = "Giorni Apertura";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -558,7 +603,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox descAF;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label18;
@@ -569,7 +613,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox descNAlim;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button inviaNAlim;
         private System.Windows.Forms.MaskedTextBox codiceText;
         private System.Windows.Forms.MaskedTextBox prunText;
@@ -578,6 +621,15 @@
         private System.Windows.Forms.MaskedTextBox codiceAF;
         private System.Windows.Forms.MaskedTextBox prunAF;
         private System.Windows.Forms.MaskedTextBox numgAF;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader codice;
+        private System.Windows.Forms.ColumnHeader descrizione;
+        private System.Windows.Forms.ColumnHeader prezzounit;
+        private System.Windows.Forms.ColumnHeader datascadenza;
+        private System.Windows.Forms.ColumnHeader materiale;
+        private System.Windows.Forms.ColumnHeader riciclabile;
+        private System.Windows.Forms.ColumnHeader numg;
     }
 }
 
