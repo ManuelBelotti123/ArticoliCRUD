@@ -51,7 +51,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tabAlimF = new System.Windows.Forms.TabPage();
             this.label19 = new System.Windows.Forms.Label();
-            this.numgAF = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.inviaAF = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -71,6 +70,7 @@
             this.prunNAlim = new System.Windows.Forms.MaskedTextBox();
             this.prunAF = new System.Windows.Forms.MaskedTextBox();
             this.codiceAF = new System.Windows.Forms.MaskedTextBox();
+            this.numgAF = new System.Windows.Forms.MaskedTextBox();
             this.tabs.SuspendLayout();
             this.tabAlim.SuspendLayout();
             this.tabNAlim.SuspendLayout();
@@ -298,10 +298,10 @@
             // 
             // tabAlimF
             // 
+            this.tabAlimF.Controls.Add(this.numgAF);
             this.tabAlimF.Controls.Add(this.codiceAF);
             this.tabAlimF.Controls.Add(this.prunAF);
             this.tabAlimF.Controls.Add(this.label19);
-            this.tabAlimF.Controls.Add(this.numgAF);
             this.tabAlimF.Controls.Add(this.dateTimePicker2);
             this.tabAlimF.Controls.Add(this.inviaAF);
             this.tabAlimF.Controls.Add(this.label9);
@@ -326,14 +326,6 @@
             this.label19.Size = new System.Drawing.Size(77, 13);
             this.label19.TabIndex = 21;
             this.label19.Text = "Giorni Apertura";
-            // 
-            // numgAF
-            // 
-            this.numgAF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numgAF.Location = new System.Drawing.Point(36, 301);
-            this.numgAF.Name = "numgAF";
-            this.numgAF.Size = new System.Drawing.Size(204, 29);
-            this.numgAF.TabIndex = 20;
             // 
             // dateTimePicker2
             // 
@@ -507,6 +499,15 @@
             this.codiceAF.Size = new System.Drawing.Size(204, 31);
             this.codiceAF.TabIndex = 25;
             // 
+            // numgAF
+            // 
+            this.numgAF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numgAF.Location = new System.Drawing.Point(36, 301);
+            this.numgAF.Mask = "0";
+            this.numgAF.Name = "numgAF";
+            this.numgAF.Size = new System.Drawing.Size(204, 31);
+            this.numgAF.TabIndex = 26;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -568,7 +569,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox descNAlim;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox numgAF;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button inviaNAlim;
         private System.Windows.Forms.MaskedTextBox codiceText;
@@ -577,6 +577,7 @@
         private System.Windows.Forms.MaskedTextBox codiceNAlim;
         private System.Windows.Forms.MaskedTextBox codiceAF;
         private System.Windows.Forms.MaskedTextBox prunAF;
+        private System.Windows.Forms.MaskedTextBox numgAF;
     }
 }
 
