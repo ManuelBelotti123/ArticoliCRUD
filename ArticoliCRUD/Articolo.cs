@@ -10,9 +10,9 @@ namespace ArticoliCRUD
     internal class Articolo : IEquatable<Articolo>
     {
         //attributi
-        protected int _codice;
-        protected string _descrizione;
-        protected double _prezzounitario;
+        private int _codice;
+        private string _descrizione;
+        private double _prezzounitario;
 
         //properties
         public int Codice { get { return _codice; } set { _codice = value; } }
@@ -69,13 +69,13 @@ namespace ArticoliCRUD
         //metodo ToString
         public override string ToString()
         {
-            return Codice.ToString() + "; " + Descrizione.ToString() + "; " + PrezzoUnitario.ToString();
+            return "Codice: " + Codice.ToString() + "; Descrizione: " + Descrizione.ToString() + "; Prezzo Unitario: " + PrezzoUnitario.ToString();
         }
 
         //metodo sconta
-        public virtual double Sconta()
+        public virtual double Sconta(bool c)
         {
-            return PrezzoUnitario - (PrezzoUnitario * 5) / 100;
+            return Math.Round(PrezzoUnitario - (PrezzoUnitario * 5) / 100, 2);
         }
 
     }

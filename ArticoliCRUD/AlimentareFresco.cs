@@ -72,12 +72,13 @@ namespace ArticoliCRUD
         //metodo ToString
         public override string ToString()
         {
-            return Codice.ToString() + "; " + Descrizione.ToString() + "; " + PrezzoUnitario.ToString() + "; " + DataScadenza.ToString() + "; " + NumGiorni.ToString();
+            return base.ToString() + "; Numero Giorni" + NumGiorni.ToString();
         }
 
         //metodo sconta
-        public override double Sconta()
+        public override double Sconta(bool c)
         {
+            double ps = PrezzoUnitario;
             int peragg = 0;
             switch (NumGiorni)
             {
@@ -97,7 +98,12 @@ namespace ArticoliCRUD
                     peragg = 2;
                     break;
             }
-            return PrezzoUnitario - (PrezzoUnitario * 5) / 100 - (PrezzoUnitario * peragg) / 100;
+            ps = ps - (PrezzoUnitario * peragg) / 100;
+            if (c)
+            {
+                ps = ps - (PrezzoUnitario * 5) / 100;
+            }
+            return Math.Round(ps, 2);
         }
     }
 }

@@ -63,20 +63,22 @@ namespace ArticoliCRUD
         //metodo ToString
         public override string ToString()
         {
-            return Codice.ToString() + "; " + Descrizione.ToString() + "; " + PrezzoUnitario.ToString() + "; " + Materiale.ToString() + "; " + Riciclable.ToString();
+            return base.ToString() + "; Materiale: " + Materiale.ToString() + "; Riciclabile: " + Riciclable.ToString();
         }
 
         //metodo sconta
-        public override double Sconta()
+        public override double Sconta(bool c)
         {
+            double ps = PrezzoUnitario;
             if (Riciclable)
             {
-                return PrezzoUnitario - (PrezzoUnitario * 15) / 100;
+                ps = ps - (PrezzoUnitario * 10) / 100;
             }
-            else
+            if (c)
             {
-                return PrezzoUnitario - (PrezzoUnitario * 5) / 100;
+                ps = ps - (PrezzoUnitario * 5) / 100;
             }
+            return Math.Round(ps, 2);
         }
     }
 }

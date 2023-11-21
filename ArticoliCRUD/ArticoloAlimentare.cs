@@ -10,7 +10,7 @@ namespace ArticoliCRUD
     internal class ArticoloAlimentare : Articolo
     {
         //attributi
-        protected DateTime _datascadenza;
+        private DateTime _datascadenza;
 
         //properties
         public DateTime DataScadenza { get { return _datascadenza; } set { _datascadenza = value; } }
@@ -59,20 +59,22 @@ namespace ArticoliCRUD
         //metodo ToString
         public override string ToString()
         {
-            return Codice.ToString() + "; " + Descrizione.ToString() + "; " + PrezzoUnitario.ToString() + "; " + DataScadenza.ToString();
+            return base.ToString() + "; Scadenza: " + DataScadenza.ToString();
         }
 
         //metodo sconta
-        public override double Sconta()
+        public override double Sconta(bool c)
         {
+            double ps = PrezzoUnitario;
             if (DataScadenza.Year == DateTime.Today.Year)
             {
-                return PrezzoUnitario - (PrezzoUnitario * 25) / 100;
+                ps = ps - (PrezzoUnitario * 20) / 100;
             }
-            else
+            if (c)
             {
-                return PrezzoUnitario - (PrezzoUnitario * 5) / 100;
+                ps = ps - (PrezzoUnitario * 5) / 100;
             }
+            return Math.Round(ps, 2);
         }
     }
 }

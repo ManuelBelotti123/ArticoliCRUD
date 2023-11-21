@@ -35,12 +35,17 @@ namespace ArticoliCRUD
             DialogResult rs = MessageBox.Show("Vuole completare l'operazione?", "Informazione", MessageBoxButtons.YesNo);
             if (rs == DialogResult.Yes)
             {
-                arr[i] = new ArticoloAlimentare(int. Parse(codiceText.Text), descrizioneText.Text, double.Parse(prunText.Text), dateTimePicker1.Value);
+                arr[i] = new ArticoloAlimentare(int.Parse(codiceText.Text), descrizioneText.Text, double.Parse(prunText.Text), dateTimePicker1.Value);
                 DialogResult r = MessageBox.Show("Possiede una carta fedeltà?", "Informazione", MessageBoxButtons.YesNo);
                 if (r == DialogResult.Yes)
                 {
-                    MessageBox.Show("Avviso", "Sconto fedeltà applicato correttamente.");
-                    arr[i].PrezzoUnitario = arr[i].Sconta();
+                    MessageBox.Show("Sconti fedeltà e ordinario applicato correttamente.", "Avviso");
+                    arr[i].PrezzoUnitario = arr[i].Sconta(true);
+                }
+                else
+                {
+                    MessageBox.Show("Sconto aggiuntivo ordinario applicato correttamente.", "Avviso");
+                    arr[i].PrezzoUnitario = arr[i].Sconta(false);
                 }
                 listBox1.Items.Add(arr[i].ToString());
                 i++;
