@@ -111,5 +111,10 @@ namespace ArticoliCRUD
                 i++;
             }
         }
+
+        private void codiceText_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }

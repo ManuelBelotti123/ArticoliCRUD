@@ -36,9 +36,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.prunText = new System.Windows.Forms.TextBox();
             this.descrizioneText = new System.Windows.Forms.TextBox();
-            this.codiceText = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabNAlim = new System.Windows.Forms.TabPage();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -49,9 +47,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.prunNAlim = new System.Windows.Forms.TextBox();
             this.descNAlim = new System.Windows.Forms.TextBox();
-            this.codiceNAlim = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tabAlimF = new System.Windows.Forms.TabPage();
             this.label19 = new System.Windows.Forms.Label();
@@ -62,15 +58,19 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.prunAF = new System.Windows.Forms.TextBox();
             this.descAF = new System.Windows.Forms.TextBox();
-            this.codiceAF = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.inviaNAlim = new System.Windows.Forms.Button();
+            this.codiceText = new System.Windows.Forms.MaskedTextBox();
+            this.prunText = new System.Windows.Forms.MaskedTextBox();
+            this.codiceNAlim = new System.Windows.Forms.MaskedTextBox();
+            this.prunNAlim = new System.Windows.Forms.MaskedTextBox();
+            this.prunAF = new System.Windows.Forms.MaskedTextBox();
+            this.codiceAF = new System.Windows.Forms.MaskedTextBox();
             this.tabs.SuspendLayout();
             this.tabAlim.SuspendLayout();
             this.tabNAlim.SuspendLayout();
@@ -91,15 +91,15 @@
             // 
             // tabAlim
             // 
+            this.tabAlim.Controls.Add(this.prunText);
+            this.tabAlim.Controls.Add(this.codiceText);
             this.tabAlim.Controls.Add(this.dateTimePicker1);
             this.tabAlim.Controls.Add(this.inviaAlim);
             this.tabAlim.Controls.Add(this.label8);
             this.tabAlim.Controls.Add(this.label7);
             this.tabAlim.Controls.Add(this.label6);
             this.tabAlim.Controls.Add(this.label5);
-            this.tabAlim.Controls.Add(this.prunText);
             this.tabAlim.Controls.Add(this.descrizioneText);
-            this.tabAlim.Controls.Add(this.codiceText);
             this.tabAlim.Controls.Add(this.label2);
             this.tabAlim.Location = new System.Drawing.Point(4, 22);
             this.tabAlim.Name = "tabAlim";
@@ -162,14 +162,6 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Codice Articolo";
             // 
-            // prunText
-            // 
-            this.prunText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prunText.Location = new System.Drawing.Point(36, 213);
-            this.prunText.Name = "prunText";
-            this.prunText.Size = new System.Drawing.Size(204, 29);
-            this.prunText.TabIndex = 3;
-            // 
             // descrizioneText
             // 
             this.descrizioneText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -177,14 +169,6 @@
             this.descrizioneText.Name = "descrizioneText";
             this.descrizioneText.Size = new System.Drawing.Size(204, 29);
             this.descrizioneText.TabIndex = 2;
-            // 
-            // codiceText
-            // 
-            this.codiceText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codiceText.Location = new System.Drawing.Point(36, 90);
-            this.codiceText.Name = "codiceText";
-            this.codiceText.Size = new System.Drawing.Size(204, 29);
-            this.codiceText.TabIndex = 1;
             // 
             // label2
             // 
@@ -198,6 +182,8 @@
             // 
             // tabNAlim
             // 
+            this.tabNAlim.Controls.Add(this.prunNAlim);
+            this.tabNAlim.Controls.Add(this.codiceNAlim);
             this.tabNAlim.Controls.Add(this.inviaNAlim);
             this.tabNAlim.Controls.Add(this.radioButton2);
             this.tabNAlim.Controls.Add(this.radioButton1);
@@ -207,9 +193,7 @@
             this.tabNAlim.Controls.Add(this.label15);
             this.tabNAlim.Controls.Add(this.label16);
             this.tabNAlim.Controls.Add(this.label17);
-            this.tabNAlim.Controls.Add(this.prunNAlim);
             this.tabNAlim.Controls.Add(this.descNAlim);
-            this.tabNAlim.Controls.Add(this.codiceNAlim);
             this.tabNAlim.Controls.Add(this.label3);
             this.tabNAlim.Location = new System.Drawing.Point(4, 22);
             this.tabNAlim.Name = "tabNAlim";
@@ -294,14 +278,6 @@
             this.label17.TabIndex = 15;
             this.label17.Text = "Codice Articolo";
             // 
-            // prunNAlim
-            // 
-            this.prunNAlim.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prunNAlim.Location = new System.Drawing.Point(39, 192);
-            this.prunNAlim.Name = "prunNAlim";
-            this.prunNAlim.Size = new System.Drawing.Size(204, 29);
-            this.prunNAlim.TabIndex = 13;
-            // 
             // descNAlim
             // 
             this.descNAlim.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -309,14 +285,6 @@
             this.descNAlim.Name = "descNAlim";
             this.descNAlim.Size = new System.Drawing.Size(204, 29);
             this.descNAlim.TabIndex = 12;
-            // 
-            // codiceNAlim
-            // 
-            this.codiceNAlim.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codiceNAlim.Location = new System.Drawing.Point(39, 90);
-            this.codiceNAlim.Name = "codiceNAlim";
-            this.codiceNAlim.Size = new System.Drawing.Size(204, 29);
-            this.codiceNAlim.TabIndex = 11;
             // 
             // label3
             // 
@@ -330,6 +298,8 @@
             // 
             // tabAlimF
             // 
+            this.tabAlimF.Controls.Add(this.codiceAF);
+            this.tabAlimF.Controls.Add(this.prunAF);
             this.tabAlimF.Controls.Add(this.label19);
             this.tabAlimF.Controls.Add(this.numgAF);
             this.tabAlimF.Controls.Add(this.dateTimePicker2);
@@ -338,9 +308,7 @@
             this.tabAlimF.Controls.Add(this.label10);
             this.tabAlimF.Controls.Add(this.label11);
             this.tabAlimF.Controls.Add(this.label12);
-            this.tabAlimF.Controls.Add(this.prunAF);
             this.tabAlimF.Controls.Add(this.descAF);
-            this.tabAlimF.Controls.Add(this.codiceAF);
             this.tabAlimF.Controls.Add(this.label4);
             this.tabAlimF.Location = new System.Drawing.Point(4, 22);
             this.tabAlimF.Name = "tabAlimF";
@@ -420,14 +388,6 @@
             this.label12.TabIndex = 15;
             this.label12.Text = "Codice Articolo";
             // 
-            // prunAF
-            // 
-            this.prunAF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prunAF.Location = new System.Drawing.Point(36, 195);
-            this.prunAF.Name = "prunAF";
-            this.prunAF.Size = new System.Drawing.Size(204, 29);
-            this.prunAF.TabIndex = 13;
-            // 
             // descAF
             // 
             this.descAF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -435,14 +395,6 @@
             this.descAF.Name = "descAF";
             this.descAF.Size = new System.Drawing.Size(204, 29);
             this.descAF.TabIndex = 12;
-            // 
-            // codiceAF
-            // 
-            this.codiceAF.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codiceAF.Location = new System.Drawing.Point(36, 90);
-            this.codiceAF.Name = "codiceAF";
-            this.codiceAF.Size = new System.Drawing.Size(204, 29);
-            this.codiceAF.TabIndex = 11;
             // 
             // label4
             // 
@@ -501,6 +453,60 @@
             this.inviaNAlim.UseVisualStyleBackColor = true;
             this.inviaNAlim.Click += new System.EventHandler(this.inviaNAlim_Click);
             // 
+            // codiceText
+            // 
+            this.codiceText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codiceText.Location = new System.Drawing.Point(36, 90);
+            this.codiceText.Mask = "0000000000000000";
+            this.codiceText.Name = "codiceText";
+            this.codiceText.Size = new System.Drawing.Size(204, 31);
+            this.codiceText.TabIndex = 12;
+            // 
+            // prunText
+            // 
+            this.prunText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prunText.Location = new System.Drawing.Point(36, 213);
+            this.prunText.Mask = "00,00";
+            this.prunText.Name = "prunText";
+            this.prunText.Size = new System.Drawing.Size(204, 31);
+            this.prunText.TabIndex = 13;
+            // 
+            // codiceNAlim
+            // 
+            this.codiceNAlim.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codiceNAlim.Location = new System.Drawing.Point(39, 91);
+            this.codiceNAlim.Mask = "0000000000000000";
+            this.codiceNAlim.Name = "codiceNAlim";
+            this.codiceNAlim.Size = new System.Drawing.Size(204, 31);
+            this.codiceNAlim.TabIndex = 24;
+            // 
+            // prunNAlim
+            // 
+            this.prunNAlim.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prunNAlim.Location = new System.Drawing.Point(39, 192);
+            this.prunNAlim.Mask = "00,00";
+            this.prunNAlim.Name = "prunNAlim";
+            this.prunNAlim.Size = new System.Drawing.Size(204, 31);
+            this.prunNAlim.TabIndex = 25;
+            // 
+            // prunAF
+            // 
+            this.prunAF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prunAF.Location = new System.Drawing.Point(36, 195);
+            this.prunAF.Mask = "00,00";
+            this.prunAF.Name = "prunAF";
+            this.prunAF.Size = new System.Drawing.Size(204, 31);
+            this.prunAF.TabIndex = 22;
+            // 
+            // codiceAF
+            // 
+            this.codiceAF.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codiceAF.Location = new System.Drawing.Point(36, 90);
+            this.codiceAF.Mask = "0000000000000000";
+            this.codiceAF.Name = "codiceAF";
+            this.codiceAF.Size = new System.Drawing.Size(204, 31);
+            this.codiceAF.TabIndex = 25;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -536,9 +542,7 @@
         private System.Windows.Forms.TabPage tabAlimF;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox prunText;
         private System.Windows.Forms.TextBox descrizioneText;
-        private System.Windows.Forms.TextBox codiceText;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -552,9 +556,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox prunAF;
         private System.Windows.Forms.TextBox descAF;
-        private System.Windows.Forms.TextBox codiceAF;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
@@ -564,13 +566,17 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox prunNAlim;
         private System.Windows.Forms.TextBox descNAlim;
-        private System.Windows.Forms.TextBox codiceNAlim;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox numgAF;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button inviaNAlim;
+        private System.Windows.Forms.MaskedTextBox codiceText;
+        private System.Windows.Forms.MaskedTextBox prunText;
+        private System.Windows.Forms.MaskedTextBox prunNAlim;
+        private System.Windows.Forms.MaskedTextBox codiceNAlim;
+        private System.Windows.Forms.MaskedTextBox codiceAF;
+        private System.Windows.Forms.MaskedTextBox prunAF;
     }
 }
 
