@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,13 @@ namespace ArticoliCRUD
     public partial class Form1 : Form
     {
         //dichiarazione array
-        Articolo[] arr = new Articolo[10000];
+        Articolo[] arr;
+        int i;
         public Form1()
         {
             InitializeComponent();
+            arr = new Articolo[10000];
+            i = 0;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -31,7 +35,6 @@ namespace ArticoliCRUD
 
         private void inviaAlim_Click(object sender, EventArgs e)
         {
-            int i = 0;
             DialogResult rs = MessageBox.Show("Vuole completare l'operazione?", "Informazione", MessageBoxButtons.YesNo);
             if (rs == DialogResult.Yes)
             {
@@ -69,7 +72,6 @@ namespace ArticoliCRUD
 
         private void inviaNAlim_Click(object sender, EventArgs e)
         {
-            int i = 0;
             DialogResult rs = MessageBox.Show("Vuole completare l'operazione?", "Informazione", MessageBoxButtons.YesNo);
             if (rs == DialogResult.Yes)
             {
@@ -107,7 +109,6 @@ namespace ArticoliCRUD
 
         private void inviaAF_Click(object sender, EventArgs e)
         {
-            int i = 0;
             DialogResult rs = MessageBox.Show("Vuole completare l'operazione?", "Informazione", MessageBoxButtons.YesNo);
             if (rs == DialogResult.Yes)
             {
@@ -138,18 +139,25 @@ namespace ArticoliCRUD
 
         private void cancella_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < arr.Length; i++)
+            int j = 0;
+            List<Articolo> arrl = arr.ToList();
+            while (arrl[j] != null)
             {
-                if (arr[i].Codice == int.Parse(cancellab.Text))
+                if (arrl[j].Codice == int.Parse(cancellab.Text))
                 {
-                    while(arr[i + 1] == null) arr[i] = arr[i + 1];
+                    arrl.RemoveAt(j);
+                    arrl.Add(null);
                 }
+                j++;
             }
+            arr = arrl.ToArray();
+            Visualizza();
         }
 
         //funzione visualizzazione array su listview
         public void Visualizza()
         {
+            listView1.Items.Clear();
             ListViewItem Item = new ListViewItem();
             int i = 0;
             while (arr[i] != null)
