@@ -69,7 +69,7 @@ namespace ArticoliCRUD
         //metodo ToString
         public override string ToString()
         {
-            return "Codice: " + Codice.ToString() + "; Descrizione: " + Descrizione.ToString() + "; Prezzo Unitario: " + PrezzoUnitario.ToString();
+            return Codice.ToString() + ";" + Descrizione.ToString() + ";" + PrezzoUnitario.ToString();
         }
 
         //metodo sconta

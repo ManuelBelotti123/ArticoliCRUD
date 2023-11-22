@@ -63,7 +63,7 @@ namespace ArticoliCRUD
         //metodo ToString
         public override string ToString()
         {
-            return base.ToString() + "; Materiale: " + Materiale.ToString() + "; Riciclabile: " + Riciclable.ToString();
+            return base.ToString() + ";" + Materiale.ToString() + ";" + Riciclable.ToString();
         }
 
         //metodo sconta

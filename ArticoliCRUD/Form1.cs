@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,7 +43,14 @@ namespace ArticoliCRUD
                 DialogResult r = MessageBox.Show("Possiede una carta fedeltà?", "Informazione", MessageBoxButtons.YesNo);
                 if (r == DialogResult.Yes)
                 {
-                    MessageBox.Show("Sconti fedeltà e ordinario applicato correttamente.", "Avviso");
+                    if (dateTimePicker1.Value.Year == DateTime.Today.Year)
+                    {
+                        MessageBox.Show("Sconti fedeltà e ordinario applicati correttamente.", "Avviso");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sconto fedeltà applicato correttamente.", "Avviso");
+                    }
                     arr[i].PrezzoUnitario = arr[i].Sconta(true);
                 }
                 else
@@ -79,7 +87,14 @@ namespace ArticoliCRUD
                 DialogResult r = MessageBox.Show("Possiede una carta fedeltà?", "Informazione", MessageBoxButtons.YesNo);
                 if (r == DialogResult.Yes)
                 {
-                    MessageBox.Show("Sconti fedeltà e ordinario applicato correttamente.", "Avviso");
+                    if (radioButton1.Checked)
+                    {
+                        MessageBox.Show("Sconti fedeltà e ordinario applicati correttamente.", "Avviso");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sconto fedeltà applicato correttamente.", "Avviso");
+                    }
                     arr[i].PrezzoUnitario = arr[i].Sconta(true);
                 }
                 else
@@ -128,7 +143,7 @@ namespace ArticoliCRUD
                 Item.Text = arr[i].Codice.ToString();
                 Item.SubItems.Add(arr[i].Descrizione);
                 Item.SubItems.Add("€" + arr[i].PrezzoUnitario.ToString());
-                Item.SubItems.Add(((AlimentareFresco)arr[i]).DataScadenza.ToString());
+                Item.SubItems.Add(((AlimentareFresco)arr[i]).DataScadenza.ToShortDateString());
                 Item.SubItems.Add("--");
                 Item.SubItems.Add("--");
                 Item.SubItems.Add(((AlimentareFresco)arr[i]).NumGiorni.ToString());
@@ -275,6 +290,71 @@ namespace ArticoliCRUD
                 }
                 listView1.Items.Add(Item);
                 i++;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (!File.Exists("file.csv"))
+            {
+                File.Create("file.csv");
+            }
+            using (StreamReader sr = File.OpenText("file.csv"))
+            {
+                string line;
+                int j = 0;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    string[] div = line.Split(';');
+                    if (div.Length == 4)
+                    {
+                        arr[j] = new ArticoloAlimentare(int.Parse(div[0]), div[1], double.Parse(div[2]), DateTime.Parse(div[3]));
+                    }
+                    else if (div.Length == 5)
+                    {
+                        if (div[4] == "True" || div[4] == "False")
+                        {
+                            arr[j] = new ArticoloNonAlimentare(int.Parse(div[0]), div[1], double.Parse(div[2]), div[3], bool.Parse(div[4]));
+                        }
+                        else
+                        {
+                            arr[j] = new AlimentareFresco(int.Parse(div[0]), div[1], double.Parse(div[2]), DateTime.Parse(div[3]), int.Parse(div[4]));
+                        }
+                    }
+                    j++;
+                }
+                sr.Close();
+            }
+            Visualizza();
+            MessageBox.Show("File caricato correttamente.", "Avviso");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult r = MessageBox.Show("Vuole sovrascrivere (si) o aggiungere dei record (no) al file di salvataggio?", "Avviso", MessageBoxButtons.YesNo);
+            if (r == DialogResult.Yes)
+            {
+                StreamWriter sw = File.CreateText("file.csv");
+                int i = 0;
+                while (arr[i] != null)
+                {
+                    sw.WriteLine(arr[i].ToString());
+                    i++;
+                }
+                sw.Close();
+                MessageBox.Show("File sovrascritto correttamente.", "Avviso");
+            }
+            else if (r == DialogResult.No)
+            {
+                StreamWriter sw = File.AppendText("file.csv");
+                int i = 0;
+                while (arr[i] != null)
+                {
+                    sw.WriteLine(arr[i].ToString());
+                    i++;
+                }
+                sw.Close();
+                MessageBox.Show("Record salvati correttamente.", "Avviso");
             }
         }
     }

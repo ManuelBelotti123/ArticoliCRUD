@@ -72,7 +72,7 @@ namespace ArticoliCRUD
         //metodo ToString
         public override string ToString()
         {
-            return base.ToString() + "; Numero Giorni" + NumGiorni.ToString();
+            return base.ToString() + ";" + NumGiorni.ToString();
         }
 
         //metodo sconta

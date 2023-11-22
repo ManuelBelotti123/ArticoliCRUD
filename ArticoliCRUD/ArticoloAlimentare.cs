@@ -59,7 +59,7 @@ namespace ArticoliCRUD
         //metodo ToString
         public override string ToString()
         {
-            return base.ToString() + "; Scadenza: " + DataScadenza.ToString();
+            return base.ToString() + ";" + DataScadenza.ToString();
         }
 
         //metodo sconta

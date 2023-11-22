@@ -68,6 +68,7 @@
             this.descAF = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.opzioni = new System.Windows.Forms.TabPage();
+            this.damodb = new System.Windows.Forms.MaskedTextBox();
             this.colonnab = new System.Windows.Forms.MaskedTextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -90,7 +91,6 @@
             this.materiale = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.riciclabile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.numg = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.damodb = new System.Windows.Forms.MaskedTextBox();
             this.tabs.SuspendLayout();
             this.tabAlim.SuspendLayout();
             this.tabNAlim.SuspendLayout();
@@ -512,6 +512,14 @@
             this.opzioni.Text = "Opzioni Aggiuntive";
             this.opzioni.UseVisualStyleBackColor = true;
             // 
+            // damodb
+            // 
+            this.damodb.Location = new System.Drawing.Point(200, 121);
+            this.damodb.Mask = "0";
+            this.damodb.Name = "damodb";
+            this.damodb.Size = new System.Drawing.Size(114, 20);
+            this.damodb.TabIndex = 20;
+            // 
             // colonnab
             // 
             this.colonnab.Location = new System.Drawing.Point(200, 82);
@@ -578,6 +586,7 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "Scarica File Scontrino";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -587,6 +596,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Carica File Scontrino";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cancella
             // 
@@ -683,14 +693,6 @@
             // numg
             // 
             this.numg.Text = "Giorni Apertura";
-            // 
-            // damodb
-            // 
-            this.damodb.Location = new System.Drawing.Point(200, 121);
-            this.damodb.Mask = "0";
-            this.damodb.Name = "damodb";
-            this.damodb.Size = new System.Drawing.Size(114, 20);
-            this.damodb.TabIndex = 20;
             // 
             // Form1
             // 
