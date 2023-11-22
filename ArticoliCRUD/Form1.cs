@@ -154,14 +154,92 @@ namespace ArticoliCRUD
             Visualizza();
         }
 
+        private void modifica_Click(object sender, EventArgs e)
+        {
+            int j = 0;
+            List<Articolo> arrl = arr.ToList();
+            while (arrl[j] != null)
+            {
+                if (arrl[j].Codice == int.Parse(colonnab.Text))
+                {
+                    switch (int.Parse(damodb.Text))
+                    {
+                        case 1:
+                            arrl[j].Codice = int.Parse(modb.Text);
+                            Visualizza();
+                            break;
+                        case 2:
+                            arrl[j].Descrizione = modb.Text;
+                            Visualizza();
+                            break;
+                        case 3:
+                            arrl[j].PrezzoUnitario = double.Parse(modb.Text);
+                            Visualizza();
+                            break;
+                        case 4:
+                            if (arrl[j] is ArticoloAlimentare)
+                            {
+                                ((ArticoloAlimentare)arrl[j]).DataScadenza = DateTime.Parse(modb.Text);
+                                Visualizza();
+                            }
+                            else if (arrl[j] is AlimentareFresco)
+                            {
+                                ((AlimentareFresco)arrl[j]).DataScadenza = DateTime.Parse(modb.Text);
+                                Visualizza();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Operazione impossibile per il tipo di prodotto scelto.", "Attenzione");
+                            }
+                            break;
+                        case 5:
+                            if (arrl[j] is ArticoloNonAlimentare)
+                            {
+                                ((ArticoloNonAlimentare)arrl[j]).Materiale = modb.Text;
+                                Visualizza();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Operazione impossibile per il tipo di prodotto scelto.", "Attenzione");
+                            }
+                            break;
+                        case 6:
+                            if (arrl[j] is ArticoloNonAlimentare)
+                            {
+                                ((ArticoloNonAlimentare)arrl[j]).Riciclable = bool.Parse(modb.Text);
+                                Visualizza();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Operazione impossibile per il tipo di prodotto scelto.", "Attenzione"); Visualizza();
+                            }
+                            break;
+                        case 7:
+                            if (arrl[j] is AlimentareFresco)
+                            {
+                                ((AlimentareFresco)arrl[j]).NumGiorni = int.Parse(modb.Text);
+                                Visualizza();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Operazione impossibile per il tipo di prodotto scelto.", "Attenzione");
+                            }
+                            break;
+                    }
+                }
+                j++;
+            }
+            arr = arrl.ToArray();
+        }
+
         //funzione visualizzazione array su listview
         public void Visualizza()
         {
             listView1.Items.Clear();
-            ListViewItem Item = new ListViewItem();
             int i = 0;
             while (arr[i] != null)
             {
+                ListViewItem Item = new ListViewItem();
                 if (arr[i] is ArticoloAlimentare)
                 {
                     Item.Text = arr[i].Codice.ToString();
@@ -171,7 +249,7 @@ namespace ArticoliCRUD
                     Item.SubItems.Add("--");
                     Item.SubItems.Add("--");
                     Item.SubItems.Add("--");
-                    listView1.Items.Add(Item);
+                    //listView1.Items.Add(Item);
                 }
                 else if (arr[i] is ArticoloNonAlimentare)
                 {
@@ -182,7 +260,7 @@ namespace ArticoliCRUD
                     Item.SubItems.Add(((ArticoloNonAlimentare)arr[i]).Materiale.ToString());
                     Item.SubItems.Add(((ArticoloNonAlimentare)arr[i]).Riciclable.ToString());
                     Item.SubItems.Add("--");
-                    listView1.Items.Add(Item);
+                    //listView1.Items.Add(Item);
                 }
                 else if (arr[i] is AlimentareFresco)
                 {
@@ -193,8 +271,9 @@ namespace ArticoliCRUD
                     Item.SubItems.Add("--");
                     Item.SubItems.Add("--");
                     Item.SubItems.Add(((AlimentareFresco)arr[i]).NumGiorni.ToString());
-                    listView1.Items.Add(Item);
+                    //listView1.Items.Add(Item);
                 }
+                listView1.Items.Add(Item);
                 i++;
             }
         }

@@ -75,7 +75,6 @@
             this.label22 = new System.Windows.Forms.Label();
             this.cancellab = new System.Windows.Forms.TextBox();
             this.modb = new System.Windows.Forms.TextBox();
-            this.damodb = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.cancella = new System.Windows.Forms.Button();
@@ -91,6 +90,7 @@
             this.materiale = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.riciclabile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.numg = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.damodb = new System.Windows.Forms.MaskedTextBox();
             this.tabs.SuspendLayout();
             this.tabAlim.SuspendLayout();
             this.tabNAlim.SuspendLayout();
@@ -491,6 +491,7 @@
             // 
             // opzioni
             // 
+            this.opzioni.Controls.Add(this.damodb);
             this.opzioni.Controls.Add(this.colonnab);
             this.opzioni.Controls.Add(this.label25);
             this.opzioni.Controls.Add(this.label24);
@@ -498,7 +499,6 @@
             this.opzioni.Controls.Add(this.label22);
             this.opzioni.Controls.Add(this.cancellab);
             this.opzioni.Controls.Add(this.modb);
-            this.opzioni.Controls.Add(this.damodb);
             this.opzioni.Controls.Add(this.button2);
             this.opzioni.Controls.Add(this.button1);
             this.opzioni.Controls.Add(this.cancella);
@@ -552,9 +552,9 @@
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(197, 105);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(73, 13);
+            this.label22.Size = new System.Drawing.Size(106, 13);
             this.label22.TabIndex = 12;
-            this.label22.Text = "Da Modificare";
+            this.label22.Text = "Campo da modificare";
             // 
             // cancellab
             // 
@@ -569,13 +569,6 @@
             this.modb.Name = "modb";
             this.modb.Size = new System.Drawing.Size(114, 20);
             this.modb.TabIndex = 9;
-            // 
-            // damodb
-            // 
-            this.damodb.Location = new System.Drawing.Point(200, 121);
-            this.damodb.Name = "damodb";
-            this.damodb.Size = new System.Drawing.Size(114, 20);
-            this.damodb.TabIndex = 8;
             // 
             // button2
             // 
@@ -613,6 +606,7 @@
             this.modifica.TabIndex = 3;
             this.modifica.Text = "Modifica";
             this.modifica.UseVisualStyleBackColor = true;
+            this.modifica.Click += new System.EventHandler(this.modifica_Click);
             // 
             // label20
             // 
@@ -689,6 +683,14 @@
             // numg
             // 
             this.numg.Text = "Giorni Apertura";
+            // 
+            // damodb
+            // 
+            this.damodb.Location = new System.Drawing.Point(200, 121);
+            this.damodb.Mask = "0";
+            this.damodb.Name = "damodb";
+            this.damodb.Size = new System.Drawing.Size(114, 20);
+            this.damodb.TabIndex = 20;
             // 
             // Form1
             // 
@@ -771,7 +773,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox modb;
-        private System.Windows.Forms.TextBox damodb;
         private System.Windows.Forms.Button modifica;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader codice;
@@ -781,6 +782,7 @@
         private System.Windows.Forms.ColumnHeader materiale;
         private System.Windows.Forms.ColumnHeader riciclabile;
         private System.Windows.Forms.ColumnHeader numg;
+        private System.Windows.Forms.MaskedTextBox damodb;
     }
 }
 
