@@ -91,6 +91,7 @@
             this.materiale = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.riciclabile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.numg = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ordina = new System.Windows.Forms.Button();
             this.tabs.SuspendLayout();
             this.tabAlim.SuspendLayout();
             this.tabNAlim.SuspendLayout();
@@ -491,6 +492,7 @@
             // 
             // opzioni
             // 
+            this.opzioni.Controls.Add(this.ordina);
             this.opzioni.Controls.Add(this.damodb);
             this.opzioni.Controls.Add(this.colonnab);
             this.opzioni.Controls.Add(this.label25);
@@ -694,6 +696,16 @@
             // 
             this.numg.Text = "Giorni Apertura";
             // 
+            // ordina
+            // 
+            this.ordina.Location = new System.Drawing.Point(200, 270);
+            this.ordina.Name = "ordina";
+            this.ordina.Size = new System.Drawing.Size(151, 33);
+            this.ordina.TabIndex = 22;
+            this.ordina.Text = "Ordina (Prezzo)";
+            this.ordina.UseVisualStyleBackColor = true;
+            this.ordina.Click += new System.EventHandler(this.ordina_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -785,6 +797,7 @@
         private System.Windows.Forms.ColumnHeader riciclabile;
         private System.Windows.Forms.ColumnHeader numg;
         private System.Windows.Forms.MaskedTextBox damodb;
+        private System.Windows.Forms.Button ordina;
     }
 }
 

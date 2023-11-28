@@ -357,5 +357,25 @@ namespace ArticoliCRUD
                 MessageBox.Show("Record salvati correttamente.", "Avviso");
             }
         }
+
+        private void ordina_Click(object sender, EventArgs e)
+        {
+            int i = 0, j = 0;
+            Articolo temp = null;
+            while (arr[i] != null)
+            {
+                while (arr[j] != null)
+                {
+                    if (arr[i + 1].Compare(arr[i]) == 1)
+                    {
+                        temp = arr[i];
+                        arr[i] = arr[i + 1];
+                        arr[i + 1] = temp;
+                    }
+                    i++;
+                }
+                j = 0;
+            }
+        }
     }
 }

@@ -72,6 +72,22 @@ namespace ArticoliCRUD
             return Codice.ToString() + ";" + Descrizione.ToString() + ";" + PrezzoUnitario.ToString();
         }
 
+        //metodo compare
+        public int Compare(Articolo art)
+        {
+            int n = 2;
+            if (art != null)
+            {
+                if (PrezzoUnitario == art.PrezzoUnitario)
+                    n = -1;
+                if (PrezzoUnitario > art.PrezzoUnitario)
+                    n = 0;
+                if (PrezzoUnitario < art.PrezzoUnitario)
+                    n = 1;   
+            }
+            return n;
+        }
+
         //metodo sconta
         public virtual double Sconta(bool c)
         {
