@@ -80,9 +80,9 @@ namespace ArticoliCRUD
             {
                 if (PrezzoUnitario == art.PrezzoUnitario)
                     n = -1;
-                if (PrezzoUnitario > art.PrezzoUnitario)
+                else if (PrezzoUnitario > art.PrezzoUnitario)
                     n = 0;
-                if (PrezzoUnitario < art.PrezzoUnitario)
+                else if (PrezzoUnitario < art.PrezzoUnitario)
                     n = 1;   
             }
             return n;

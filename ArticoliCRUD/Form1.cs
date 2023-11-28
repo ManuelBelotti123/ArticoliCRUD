@@ -364,18 +364,20 @@ namespace ArticoliCRUD
             Articolo temp = null;
             while (arr[i] != null)
             {
-                while (arr[j] != null)
+                while (arr[j + 1] != null)
                 {
-                    if (arr[i + 1].Compare(arr[i]) == 1)
+                    if (arr[j + 1].Compare(arr[j]) == 0)
                     {
-                        temp = arr[i];
-                        arr[i] = arr[i + 1];
-                        arr[i + 1] = temp;
+                        temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp; 
                     }
-                    i++;
+                    j++;
                 }
                 j = 0;
+                i++;
             }
+            Visualizza();
         }
     }
 }
