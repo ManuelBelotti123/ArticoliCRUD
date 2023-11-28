@@ -360,24 +360,49 @@ namespace ArticoliCRUD
 
         private void ordina_Click(object sender, EventArgs e)
         {
+            DialogResult r = MessageBox.Show("Ordine crescente (si) o decrescente (no)?", "Avviso", MessageBoxButtons.YesNo);
+            if (r == DialogResult.Yes)
+            {
+                Ordina(false);
+            }
+            else
+            {
+                Ordina(true);
+            }
+            Visualizza();
+        }
+
+        public void Ordina(bool c)
+        {
             int i = 0, j = 0;
             Articolo temp = null;
             while (arr[i] != null)
             {
                 while (arr[j + 1] != null)
                 {
-                    if (arr[j + 1].Compare(arr[j]) == 0)
+                    if (c)
                     {
-                        temp = arr[j];
-                        arr[j] = arr[j + 1];
-                        arr[j + 1] = temp; 
+                        if (arr[j + 1].Compare(arr[j]) == 0)
+                        {
+                            temp = arr[j];
+                            arr[j] = arr[j + 1];
+                            arr[j + 1] = temp;
+                        }
+                    }
+                    else
+                    {
+                        if (arr[j + 1].Compare(arr[j]) == 1)
+                        {
+                            temp = arr[j];
+                            arr[j] = arr[j + 1];
+                            arr[j + 1] = temp;
+                        }
                     }
                     j++;
                 }
                 j = 0;
                 i++;
             }
-            Visualizza();
         }
     }
 }
