@@ -68,6 +68,7 @@
             this.descAF = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.opzioni = new System.Windows.Forms.TabPage();
+            this.ordina = new System.Windows.Forms.Button();
             this.damodb = new System.Windows.Forms.MaskedTextBox();
             this.colonnab = new System.Windows.Forms.MaskedTextBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -91,7 +92,7 @@
             this.materiale = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.riciclabile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.numg = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ordina = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabs.SuspendLayout();
             this.tabAlim.SuspendLayout();
             this.tabNAlim.SuspendLayout();
@@ -492,6 +493,7 @@
             // 
             // opzioni
             // 
+            this.opzioni.Controls.Add(this.button3);
             this.opzioni.Controls.Add(this.ordina);
             this.opzioni.Controls.Add(this.damodb);
             this.opzioni.Controls.Add(this.colonnab);
@@ -513,6 +515,16 @@
             this.opzioni.TabIndex = 3;
             this.opzioni.Text = "Opzioni Aggiuntive";
             this.opzioni.UseVisualStyleBackColor = true;
+            // 
+            // ordina
+            // 
+            this.ordina.Location = new System.Drawing.Point(200, 270);
+            this.ordina.Name = "ordina";
+            this.ordina.Size = new System.Drawing.Size(151, 33);
+            this.ordina.TabIndex = 22;
+            this.ordina.Text = "Ordina (Prezzo)";
+            this.ordina.UseVisualStyleBackColor = true;
+            this.ordina.Click += new System.EventHandler(this.ordina_Click);
             // 
             // damodb
             // 
@@ -696,15 +708,15 @@
             // 
             this.numg.Text = "Giorni Apertura";
             // 
-            // ordina
+            // button3
             // 
-            this.ordina.Location = new System.Drawing.Point(200, 270);
-            this.ordina.Name = "ordina";
-            this.ordina.Size = new System.Drawing.Size(151, 33);
-            this.ordina.TabIndex = 22;
-            this.ordina.Text = "Ordina (Prezzo)";
-            this.ordina.UseVisualStyleBackColor = true;
-            this.ordina.Click += new System.EventHandler(this.ordina_Click);
+            this.button3.Location = new System.Drawing.Point(200, 309);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(151, 33);
+            this.button3.TabIndex = 23;
+            this.button3.Text = "Importo Totale";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
@@ -798,6 +810,7 @@
         private System.Windows.Forms.ColumnHeader numg;
         private System.Windows.Forms.MaskedTextBox damodb;
         private System.Windows.Forms.Button ordina;
+        private System.Windows.Forms.Button button3;
     }
 }
 

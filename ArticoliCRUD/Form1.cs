@@ -404,5 +404,15 @@ namespace ArticoliCRUD
                 i++;
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            double tot = 0;
+            while (arr[i] != null)
+            {
+                //tot += arr[i].Sconta();
+            }
+        }
     }
 }
