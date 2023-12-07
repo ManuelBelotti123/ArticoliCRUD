@@ -40,31 +40,6 @@ namespace ArticoliCRUD
             if (rs == DialogResult.Yes)
             {
                 arr[i] = new ArticoloAlimentare(int.Parse(codiceText.Text), descrizioneText.Text, double.Parse(prezzounitText.Text), dateTimePicker1.Value);
-                DialogResult r = MessageBox.Show("Possiede una carta fedeltà?", "Informazione", MessageBoxButtons.YesNo);
-                if (r == DialogResult.Yes)
-                {
-                    if (dateTimePicker1.Value.Year == DateTime.Today.Year)
-                    {
-                        MessageBox.Show("Sconti fedeltà e ordinario applicati correttamente.", "Avviso");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Sconto fedeltà applicato correttamente.", "Avviso");
-                    }
-                    arr[i].PrezzoUnitario = arr[i].Sconta(true);
-                }
-                else
-                {
-                    if (dateTimePicker1.Value.Year == DateTime.Today.Year)
-                    {
-                        MessageBox.Show("Sconto aggiuntivo ordinario applicato correttamente.", "Avviso");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Nessuno sconto applicato.", "Avviso");
-                    }
-                    arr[i].PrezzoUnitario = arr[i].Sconta(false);
-                }
                 ListViewItem Item = new ListViewItem();
                 Item.Text = arr[i].Codice.ToString();
                 Item.SubItems.Add(arr[i].Descrizione);
@@ -84,31 +59,6 @@ namespace ArticoliCRUD
             if (rs == DialogResult.Yes)
             {
                 arr[i] = new ArticoloNonAlimentare(int.Parse(codiceNAlim.Text), descNAlim.Text, double.Parse(prezzounitNAlim.Text), materialeNAlim.Text, radioButton1.Checked);
-                DialogResult r = MessageBox.Show("Possiede una carta fedeltà?", "Informazione", MessageBoxButtons.YesNo);
-                if (r == DialogResult.Yes)
-                {
-                    if (radioButton1.Checked)
-                    {
-                        MessageBox.Show("Sconti fedeltà e ordinario applicati correttamente.", "Avviso");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Sconto fedeltà applicato correttamente.", "Avviso");
-                    }
-                    arr[i].PrezzoUnitario = arr[i].Sconta(true);
-                }
-                else
-                {
-                    if (radioButton1.Checked)
-                    {
-                        MessageBox.Show("Sconto aggiuntivo ordinario applicato correttamente.", "Avviso");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Nessuno sconto applicato.", "Avviso");
-                    }
-                    arr[i].PrezzoUnitario = arr[i].Sconta(false);
-                }
                 ListViewItem Item = new ListViewItem();
                 Item.Text = arr[i].Codice.ToString();
                 Item.SubItems.Add(arr[i].Descrizione);
@@ -128,17 +78,6 @@ namespace ArticoliCRUD
             if (rs == DialogResult.Yes)
             {
                 arr[i] = new AlimentareFresco(int.Parse(codiceAF.Text), descAF.Text, double.Parse(prezzounitAF.Text), dateTimePicker2.Value.Date, int.Parse(numgAF.Text));
-                DialogResult r = MessageBox.Show("Possiede una carta fedeltà?", "Informazione", MessageBoxButtons.YesNo);
-                if (r == DialogResult.Yes)
-                {
-                    MessageBox.Show("Sconti fedeltà e ordinario applicato correttamente.", "Avviso");
-                    arr[i].PrezzoUnitario = arr[i].Sconta(true);
-                }
-                else
-                {
-                    MessageBox.Show("Sconto aggiuntivo ordinario applicato correttamente.", "Avviso");
-                    arr[i].PrezzoUnitario = arr[i].Sconta(false);
-                }
                 ListViewItem Item = new ListViewItem();
                 Item.Text = arr[i].Codice.ToString();
                 Item.SubItems.Add(arr[i].Descrizione);
@@ -409,10 +348,20 @@ namespace ArticoliCRUD
         {
             int i = 0;
             double tot = 0;
+            DialogResult rs = MessageBox.Show("Possiede la carta fedeltà?", "Domanda", MessageBoxButtons.YesNo);
             while (arr[i] != null)
             {
-                //tot += arr[i].Sconta();
+                if (rs == DialogResult.Yes) 
+                {
+                    tot += arr[i].Sconta(true);
+                }
+                else
+                {
+                    tot += arr[i].Sconta(false);
+                }
+                i++;
             }
+            MessageBox.Show("L'importo totale è " + tot, "Risultato", MessageBoxButtons.OK);
         }
     }
 }
