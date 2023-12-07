@@ -42,12 +42,15 @@ namespace ArticoliCRUD
         //metodo Equals
         public override bool Equals(object obj)
         {
-            return Equals(obj as ArticoloAlimentare);
-        }
-
-        public bool Equals(ArticoloAlimentare art)
-        {
-            return art != null && Codice == art.Codice && Descrizione == art.Descrizione && PrezzoUnitario == art.PrezzoUnitario && DataScadenza == art.DataScadenza;
+            if (obj == null || !(obj is ArticoloAlimentare))
+            {
+                return false;
+            }
+            else
+            {
+                ArticoloAlimentare art = (ArticoloAlimentare)obj;
+                return art != null && Codice == art.Codice && Descrizione == art.Descrizione && PrezzoUnitario == art.PrezzoUnitario && DataScadenza == art.DataScadenza;
+            }
         }
 
         //metodo GetHashCode

@@ -52,12 +52,15 @@ namespace ArticoliCRUD
         //metodo Equals
         public override bool Equals(object obj)
         {
-            return Equals(obj as Articolo);
-        }
-
-        public bool Equals(Articolo art)
-        {
-            return art != null && Codice == art.Codice && Descrizione == art.Descrizione && PrezzoUnitario == art.PrezzoUnitario;
+            if (obj == null || !(obj is Articolo))
+            {
+                return false;
+            }
+            else
+            {
+                Articolo art = (Articolo)obj;
+                return art != null && Codice == art.Codice && Descrizione == art.Descrizione && PrezzoUnitario == art.PrezzoUnitario;
+            }
         }
 
         //metodo GetHashCode
