@@ -96,7 +96,20 @@ namespace ArticoliCRUD
             return tot;
         }
 
-
+        public void Cancella(int cancc)
+        {
+            List<Articolo> arrl = Scontr.ToList();
+            for (int i = 0; i < ElementiOccupati; i++)
+            {
+                if (arrl[i].Codice == cancc)
+                {
+                    arrl.RemoveAt(i);
+                    arrl.Add(null);
+                }
+                i++;
+            }
+            Scontr = arrl.ToArray();
+        }
 
     }
 }
