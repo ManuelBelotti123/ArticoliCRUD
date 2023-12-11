@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ArticoliCRUD
 {
-    internal class Articolo : IEquatable<Articolo>
+    internal class Articolo
     {
         //attributi
         private int _codice;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,10 +30,12 @@ namespace ArticoliCRUD
         public Scontrino()
         {
             Scontr = null;
+            ElementiOccupati = 0;
         }
         public Scontrino(int dim)
         {
             Scontr = new Articolo[dim];
+            ElementiOccupati = 0;
         }
         public Scontrino(Scontrino scr)
         {
@@ -73,9 +76,19 @@ namespace ArticoliCRUD
         }
 
         //metodi
-        public void Aggiunta(Articolo art)
+        public void Aggiunta(ArticoloAlimentare art)
         {
-            Scontr[ElementiOccupati] = art;
+            Scontr[ElementiOccupati] = new ArticoloAlimentare(art);
+            ElementiOccupati++;
+        }
+        public void Aggiunta(ArticoloNonAlimentare art)
+        {
+            Scontr[ElementiOccupati] = new ArticoloNonAlimentare(art);
+            ElementiOccupati++;
+        }
+        public void Aggiunta(AlimentareFresco art)
+        {
+            Scontr[ElementiOccupati] = new AlimentareFresco(art);
             ElementiOccupati++;
         }
 
@@ -106,16 +119,14 @@ namespace ArticoliCRUD
                     arrl.RemoveAt(i);
                     arrl.Add(null);
                 }
-                i++;
             }
             Scontr = arrl.ToArray();
         }
 
         public int Modifica(int cd, int cdamod, string mod)
         {
-            int j = 0;
             List<Articolo> arrl = Scontr.ToList();
-            while (arrl[j] != null)
+            for (int j = 0; j < ElementiOccupati; j++)
             {
                 if (arrl[j].Codice == cd)
                 {
@@ -176,7 +187,6 @@ namespace ArticoliCRUD
                             break;
                     }
                 }
-                j++;
             }
             Scontr = arrl.ToArray();
             return 0;
@@ -208,6 +218,66 @@ namespace ArticoliCRUD
                         }
                     }
                 }
+            }
+        }
+
+        public void CaricaFile()
+        {
+            if (!File.Exists("file.csv"))
+            {
+                File.Create("file.csv");
+            }
+            using (StreamReader sr = File.OpenText("file.csv"))
+            {
+                string line;
+                int j = 0;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    string[] div = line.Split(';');
+                    if (div.Length == 4)
+                    {
+                        Scontr[j] = new ArticoloAlimentare(int.Parse(div[0]), div[1], double.Parse(div[2]), DateTime.Parse(div[3]));
+                    }
+                    else if (div.Length == 5)
+                    {
+                        if (div[4] == "True" || div[4] == "False")
+                        {
+                            Scontr[j] = new ArticoloNonAlimentare(int.Parse(div[0]), div[1], double.Parse(div[2]), div[3], bool.Parse(div[4]));
+                        }
+                        else
+                        {
+                            Scontr[j] = new AlimentareFresco(int.Parse(div[0]), div[1], double.Parse(div[2]), DateTime.Parse(div[3]), int.Parse(div[4]));
+                        }
+                    }
+                    j++;
+                }
+                sr.Close();
+            }
+        }
+
+        public void ScaricaFile(bool c)
+        {
+            if (c)
+            {
+                StreamWriter sw = File.CreateText("file.csv");
+                int i = 0;
+                while (Scontr[i] != null)
+                {
+                    sw.WriteLine(Scontr[i].ToString());
+                    i++;
+                }
+                sw.Close();
+            }
+            else
+            {
+                StreamWriter sw = File.AppendText("file.csv");
+                int i = 0;
+                while (Scontr[i] != null)
+                {
+                    sw.WriteLine(Scontr[i].ToString());
+                    i++;
+                }
+                sw.Close();
             }
         }
 
