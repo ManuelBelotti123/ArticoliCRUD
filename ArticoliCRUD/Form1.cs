@@ -185,11 +185,11 @@ namespace ArticoliCRUD
             DialogResult rs = MessageBox.Show("Possiede la carta fedeltà?", "Domanda", MessageBoxButtons.YesNo);
             if (rs == DialogResult.Yes)
             {
-                scr.Ordina(true);
+                tot = scr.Totale(true);
             }
             else
             {
-                scr.Ordina(false);
+                tot = scr.Totale(false);
             }
             MessageBox.Show("L'importo totale è " + tot, "Risultato", MessageBoxButtons.OK);
         }
