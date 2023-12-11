@@ -195,9 +195,9 @@ namespace ArticoliCRUD
         public void Ordina(bool c)
         {
             Articolo temp = null;
-            for (int i = 0; i < ElementiOccupati; i++)
+            for (int i = 0; i < ElementiOccupati - 1; i++)
             {
-                for (int j = 0; j < ElementiOccupati; j++)
+                for (int j = 0; j < ElementiOccupati - 1; j++)
                 {
                     if (c)
                     {
