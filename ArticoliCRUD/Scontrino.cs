@@ -229,6 +229,7 @@ namespace ArticoliCRUD
             }
             using (StreamReader sr = File.OpenText("file.csv"))
             {
+                Scontr = new Articolo[10000];
                 string line;
                 int j = 0;
                 while ((line = sr.ReadLine()) != null)
@@ -249,6 +250,7 @@ namespace ArticoliCRUD
                             Scontr[j] = new AlimentareFresco(int.Parse(div[0]), div[1], double.Parse(div[2]), DateTime.Parse(div[3]), int.Parse(div[4]));
                         }
                     }
+                    ElementiOccupati++;
                     j++;
                 }
                 sr.Close();
