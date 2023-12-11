@@ -111,5 +111,34 @@ namespace ArticoliCRUD
             Scontr = arrl.ToArray();
         }
 
+        public void Ordina(bool c)
+        {
+            Articolo temp = null;
+            for (int i = 0; i < ElementiOccupati; i++)
+            {
+                for (int j = 0; j < ElementiOccupati; j++)
+                {
+                    if (c)
+                    {
+                        if (Scontr[j + 1].Compare(Scontr[j]) == 0)
+                        {
+                            temp = Scontr[j];
+                            Scontr[j] = Scontr[j + 1];
+                            Scontr[j + 1] = temp;
+                        }
+                    }
+                    else
+                    {
+                        if (Scontr[j + 1].Compare(Scontr[j]) == 1)
+                        {
+                            temp = Scontr[j];
+                            Scontr[j] = Scontr[j + 1];
+                            Scontr[j + 1] = temp;
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
