@@ -123,6 +123,21 @@ namespace ArticoliCRUD
             Scontr = arrl.ToArray();
         }
 
+        public string[] Ricerca(int ricer)
+        {
+            string[] str = new string[ElementiOccupati];
+            int j = 0;
+            for (int i = 0; i < ElementiOccupati; i++)
+            {
+                if (Scontr[i].Codice == ricer)
+                {
+                    str[j] = Scontr[i].ToString();
+                    j++;
+                }
+            }
+            return str;
+        }
+
         public int Modifica(int cd, int cdamod, string mod)
         {
             List<Articolo> arrl = Scontr.ToList();

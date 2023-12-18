@@ -193,5 +193,16 @@ namespace ArticoliCRUD
             }
             MessageBox.Show("L'importo totale è " + tot, "Risultato", MessageBoxButtons.OK);
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string[] arrs = scr.Ricerca(int.Parse(ricercatxt.Text));
+            int index = 0;
+            while (arrs[index] != null) 
+            {
+                MessageBox.Show("Risulato " + (index + 1) + ": " + arrs[index], "Risultati della ricerca", MessageBoxButtons.OK);
+                index++;
+            }
+        }
     }
 }

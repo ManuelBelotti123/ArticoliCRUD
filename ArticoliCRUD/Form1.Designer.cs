@@ -68,6 +68,7 @@
             this.descAF = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.opzioni = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.ordina = new System.Windows.Forms.Button();
             this.damodb = new System.Windows.Forms.MaskedTextBox();
             this.colonnab = new System.Windows.Forms.MaskedTextBox();
@@ -92,7 +93,9 @@
             this.materiale = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.riciclabile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.numg = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button3 = new System.Windows.Forms.Button();
+            this.ricerca = new System.Windows.Forms.Button();
+            this.ricercatxt = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.tabs.SuspendLayout();
             this.tabAlim.SuspendLayout();
             this.tabNAlim.SuspendLayout();
@@ -493,6 +496,9 @@
             // 
             // opzioni
             // 
+            this.opzioni.Controls.Add(this.label21);
+            this.opzioni.Controls.Add(this.ricercatxt);
+            this.opzioni.Controls.Add(this.ricerca);
             this.opzioni.Controls.Add(this.button3);
             this.opzioni.Controls.Add(this.ordina);
             this.opzioni.Controls.Add(this.damodb);
@@ -516,9 +522,19 @@
             this.opzioni.Text = "Opzioni Aggiuntive";
             this.opzioni.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(200, 279);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(151, 33);
+            this.button3.TabIndex = 23;
+            this.button3.Text = "Importo Totale";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // ordina
             // 
-            this.ordina.Location = new System.Drawing.Point(200, 270);
+            this.ordina.Location = new System.Drawing.Point(200, 240);
             this.ordina.Name = "ordina";
             this.ordina.Size = new System.Drawing.Size(151, 33);
             this.ordina.TabIndex = 22;
@@ -528,7 +544,7 @@
             // 
             // damodb
             // 
-            this.damodb.Location = new System.Drawing.Point(200, 121);
+            this.damodb.Location = new System.Drawing.Point(200, 108);
             this.damodb.Mask = "0";
             this.damodb.Name = "damodb";
             this.damodb.Size = new System.Drawing.Size(114, 20);
@@ -536,7 +552,7 @@
             // 
             // colonnab
             // 
-            this.colonnab.Location = new System.Drawing.Point(200, 82);
+            this.colonnab.Location = new System.Drawing.Point(200, 69);
             this.colonnab.Mask = "0";
             this.colonnab.Name = "colonnab";
             this.colonnab.Size = new System.Drawing.Size(114, 20);
@@ -554,7 +570,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(197, 200);
+            this.label24.Location = new System.Drawing.Point(197, 187);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(107, 13);
             this.label24.TabIndex = 14;
@@ -563,7 +579,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(197, 144);
+            this.label23.Location = new System.Drawing.Point(197, 131);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(47, 13);
             this.label23.TabIndex = 13;
@@ -572,7 +588,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(197, 105);
+            this.label22.Location = new System.Drawing.Point(197, 92);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(106, 13);
             this.label22.TabIndex = 12;
@@ -580,21 +596,21 @@
             // 
             // cancellab
             // 
-            this.cancellab.Location = new System.Drawing.Point(200, 216);
+            this.cancellab.Location = new System.Drawing.Point(200, 203);
             this.cancellab.Name = "cancellab";
             this.cancellab.Size = new System.Drawing.Size(114, 20);
             this.cancellab.TabIndex = 10;
             // 
             // modb
             // 
-            this.modb.Location = new System.Drawing.Point(200, 160);
+            this.modb.Location = new System.Drawing.Point(200, 147);
             this.modb.Name = "modb";
             this.modb.Size = new System.Drawing.Size(114, 20);
             this.modb.TabIndex = 9;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(27, 309);
+            this.button2.Location = new System.Drawing.Point(27, 279);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(151, 33);
             this.button2.TabIndex = 6;
@@ -604,7 +620,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(27, 270);
+            this.button1.Location = new System.Drawing.Point(27, 240);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 33);
             this.button1.TabIndex = 5;
@@ -614,7 +630,7 @@
             // 
             // cancella
             // 
-            this.cancella.Location = new System.Drawing.Point(27, 203);
+            this.cancella.Location = new System.Drawing.Point(27, 190);
             this.cancella.Name = "cancella";
             this.cancella.Size = new System.Drawing.Size(151, 33);
             this.cancella.TabIndex = 4;
@@ -624,7 +640,7 @@
             // 
             // modifica
             // 
-            this.modifica.Location = new System.Drawing.Point(27, 69);
+            this.modifica.Location = new System.Drawing.Point(27, 56);
             this.modifica.Name = "modifica";
             this.modifica.Size = new System.Drawing.Size(151, 33);
             this.modifica.TabIndex = 3;
@@ -708,15 +724,31 @@
             // 
             this.numg.Text = "Giorni Apertura";
             // 
-            // button3
+            // ricerca
             // 
-            this.button3.Location = new System.Drawing.Point(200, 309);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(151, 33);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Importo Totale";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.ricerca.Location = new System.Drawing.Point(27, 318);
+            this.ricerca.Name = "ricerca";
+            this.ricerca.Size = new System.Drawing.Size(151, 33);
+            this.ricerca.TabIndex = 24;
+            this.ricerca.Text = "Ricerca";
+            this.ricerca.UseVisualStyleBackColor = true;
+            this.ricerca.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // ricercatxt
+            // 
+            this.ricercatxt.Location = new System.Drawing.Point(200, 331);
+            this.ricercatxt.Name = "ricercatxt";
+            this.ricercatxt.Size = new System.Drawing.Size(114, 20);
+            this.ricercatxt.TabIndex = 25;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(197, 316);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(65, 13);
+            this.label21.TabIndex = 26;
+            this.label21.Text = "Da ricercare";
             // 
             // Form1
             // 
@@ -811,6 +843,9 @@
         private System.Windows.Forms.MaskedTextBox damodb;
         private System.Windows.Forms.Button ordina;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox ricercatxt;
+        private System.Windows.Forms.Button ricerca;
     }
 }
 
