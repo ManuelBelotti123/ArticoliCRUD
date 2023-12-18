@@ -138,6 +138,26 @@ namespace ArticoliCRUD
             return str;
         }
 
+        public double SubTotale(bool c, string nome, double prz)
+        {
+            double tot = 0;
+            for (int i = 0; i < ElementiOccupati; i++)
+            {
+                if (Scontr[i].Descrizione == nome && Scontr[i].PrezzoUnitario == prz)
+                {
+                    if (c)
+                    {
+                        tot += Scontr[i].Sconta(true);
+                    }
+                    else
+                    {
+                        tot += Scontr[i].Sconta(false);
+                    }
+                }
+            }
+            return tot;
+        }
+
         public int Modifica(int cd, int cdamod, string mod)
         {
             List<Articolo> arrl = Scontr.ToList();

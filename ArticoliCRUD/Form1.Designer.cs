@@ -96,6 +96,11 @@
             this.ricerca = new System.Windows.Forms.Button();
             this.ricercatxt = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.subtotale = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.descprod = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.przprod = new System.Windows.Forms.TextBox();
             this.tabs.SuspendLayout();
             this.tabAlim.SuspendLayout();
             this.tabNAlim.SuspendLayout();
@@ -496,6 +501,11 @@
             // 
             // opzioni
             // 
+            this.opzioni.Controls.Add(this.label27);
+            this.opzioni.Controls.Add(this.przprod);
+            this.opzioni.Controls.Add(this.label26);
+            this.opzioni.Controls.Add(this.descprod);
+            this.opzioni.Controls.Add(this.subtotale);
             this.opzioni.Controls.Add(this.label21);
             this.opzioni.Controls.Add(this.ricercatxt);
             this.opzioni.Controls.Add(this.ricerca);
@@ -521,6 +531,7 @@
             this.opzioni.TabIndex = 3;
             this.opzioni.Text = "Opzioni Aggiuntive";
             this.opzioni.UseVisualStyleBackColor = true;
+            this.opzioni.Click += new System.EventHandler(this.opzioni_Click);
             // 
             // button3
             // 
@@ -544,7 +555,7 @@
             // 
             // damodb
             // 
-            this.damodb.Location = new System.Drawing.Point(200, 108);
+            this.damodb.Location = new System.Drawing.Point(27, 114);
             this.damodb.Mask = "0";
             this.damodb.Name = "damodb";
             this.damodb.Size = new System.Drawing.Size(114, 20);
@@ -552,7 +563,7 @@
             // 
             // colonnab
             // 
-            this.colonnab.Location = new System.Drawing.Point(200, 69);
+            this.colonnab.Location = new System.Drawing.Point(200, 72);
             this.colonnab.Mask = "0";
             this.colonnab.Name = "colonnab";
             this.colonnab.Size = new System.Drawing.Size(114, 20);
@@ -561,7 +572,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(197, 66);
+            this.label25.Location = new System.Drawing.Point(197, 57);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(40, 13);
             this.label25.TabIndex = 18;
@@ -579,7 +590,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(197, 131);
+            this.label23.Location = new System.Drawing.Point(145, 98);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(47, 13);
             this.label23.TabIndex = 13;
@@ -588,7 +599,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(197, 92);
+            this.label22.Location = new System.Drawing.Point(24, 98);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(106, 13);
             this.label22.TabIndex = 12;
@@ -603,7 +614,7 @@
             // 
             // modb
             // 
-            this.modb.Location = new System.Drawing.Point(200, 147);
+            this.modb.Location = new System.Drawing.Point(148, 114);
             this.modb.Name = "modb";
             this.modb.Size = new System.Drawing.Size(114, 20);
             this.modb.TabIndex = 9;
@@ -750,6 +761,48 @@
             this.label21.TabIndex = 26;
             this.label21.Text = "Da ricercare";
             // 
+            // subtotale
+            // 
+            this.subtotale.Location = new System.Drawing.Point(27, 143);
+            this.subtotale.Name = "subtotale";
+            this.subtotale.Size = new System.Drawing.Size(151, 33);
+            this.subtotale.TabIndex = 27;
+            this.subtotale.Text = "SubTotale";
+            this.subtotale.UseVisualStyleBackColor = true;
+            this.subtotale.Click += new System.EventHandler(this.subtotale_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(183, 143);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(105, 13);
+            this.label26.TabIndex = 29;
+            this.label26.Text = "Descrizione Prodotto";
+            // 
+            // descprod
+            // 
+            this.descprod.Location = new System.Drawing.Point(189, 159);
+            this.descprod.Name = "descprod";
+            this.descprod.Size = new System.Drawing.Size(88, 20);
+            this.descprod.TabIndex = 28;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(291, 143);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(78, 13);
+            this.label27.TabIndex = 31;
+            this.label27.Text = "Prezzo Unitario";
+            // 
+            // przprod
+            // 
+            this.przprod.Location = new System.Drawing.Point(289, 159);
+            this.przprod.Name = "przprod";
+            this.przprod.Size = new System.Drawing.Size(87, 20);
+            this.przprod.TabIndex = 30;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -846,6 +899,11 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox ricercatxt;
         private System.Windows.Forms.Button ricerca;
+        private System.Windows.Forms.Button subtotale;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox przprod;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox descprod;
     }
 }
 

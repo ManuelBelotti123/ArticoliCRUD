@@ -180,7 +180,6 @@ namespace ArticoliCRUD
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int i = 0;
             double tot = 0;
             DialogResult rs = MessageBox.Show("Possiede la carta fedeltà?", "Domanda", MessageBoxButtons.YesNo);
             if (rs == DialogResult.Yes)
@@ -203,6 +202,26 @@ namespace ArticoliCRUD
                 MessageBox.Show("Risulato " + (index + 1) + ": " + arrs[index], "Risultati della ricerca", MessageBoxButtons.OK);
                 index++;
             }
+        }
+
+        private void opzioni_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void subtotale_Click(object sender, EventArgs e)
+        {
+            double tot = 0;
+            DialogResult rs = MessageBox.Show("Possiede la carta fedeltà?", "Domanda", MessageBoxButtons.YesNo);
+            if (rs == DialogResult.Yes)
+            {
+                tot = scr.SubTotale(true, descprod.Text, double.Parse(przprod.Text));
+            }
+            else
+            {
+                tot = scr.SubTotale(false, descprod.Text, double.Parse(przprod.Text));
+            }
+            MessageBox.Show("L'importo del subtotale è " + tot, "Risultato", MessageBoxButtons.OK);
         }
     }
 }
